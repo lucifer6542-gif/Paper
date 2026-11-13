@@ -57,7 +57,7 @@
 \maketitle
 
 \begin{abstract}
-\noindent White 추측은 모든 매트로이드의 토릭 아이디얼이 대칭 교환 이항식들로 생성된다는 주장, 즉 교환 이동들이 Markov basis를 이룬다는 주장이며, 일반적으로는 성립하지 않는다. 본 논문은 그 격자 판이 계수가 $1$ 이상인 모든 매트로이드에서 성립함을 증명한다. 구체적으로, 대칭 교환 이항식의 지수벡터인 \emph{정사각형 관계} $e_{B+i}-e_{B+j}-e_{B'+i}+e_{B'+j}$들은 기저 결합 행렬 $\AM$의 정수 핵 $\kerZ$의 $\Z$\nobreakdash-기저를 항상 포함한다. 이는 다음과 동치이다. 임의의 체 위에서 토릭 아이디얼 $I_M$은 변수들을 가역으로 만들면 $\operatorname{codim} I_M$개의 대칭 교환 이항식의 완전 교차가 된다. 증명은 구성적이고 조합적이며, 컴퓨터 계산을 쓰지 않는다. 직합 분해, 한 원소 삭제에 대한 완전열, 그리고 매트로이드의 고정된 원소를 지나는 circuit들의 연결성을 결합하며, 마지막 성질은 Lehman 정리와 밀접하게 관련되어 있다. 균등 매트로이드에는 명시적인 단위삼각 정사각형 기저를 준다. 응용으로, 두 실수 행렬이 가역 행 변환과 가역 열 스케일링으로 서로 옮겨지는지를 판정한다. 판정 조건은 정사각형 기저의 원소마다 하나씩 주어지는, Plücker 비의 부호와 절댓값에 대한 정사각형 조건이다. 부호 조건에는 이 기저가 단순한 $\R$\nobreakdash-기저가 아니라 $\Z$\nobreakdash-기저라는 사실이 필요하다.
+\noindent White 추측은 모든 매트로이드의 토릭 아이디얼이 대칭 교환 이항식들로 생성된다는 주장, 즉 교환 이동들이 Markov basis를 이룬다는 주장이며, 일반적으로는 성립하지 않는다. 본 논문은 그 격자 판이 계수가 $1$ 이상인 모든 매트로이드에서 성립함을 증명한다. 구체적으로, 대칭 교환 이항식의 지수벡터인 \emph{정사각형 관계} $e_{B+i}-e_{B+j}-e_{B'+i}+e_{B'+j}$들은 기저 결합 행렬 $\AM$의 정수 핵 $\kerZ$의 $\Z$\nobreakdash-기저를 항상 포함한다. 이는 다음과 동치이다. 임의의 체 위에서 토릭 아이디얼 $I_M$은 변수들을 가역으로 만들면 $\operatorname{codim} I_M$개의 대칭 교환 이항식의 완전 교차가 된다. 증명은 구성적이고 조합적이며, 컴퓨터 계산을 쓰지 않는다. 직합 분해, 한 원소 삭제에 대한 완전열, 그리고 매트로이드의 고정된 원소를 지나는 circuit들의 연결성을 결합하며, 마지막 성질은 Lehman 정리와 밀접하게 관련되어 있다. 균등 매트로이드에 대해서는 단위삼각 정사각형 기저를 명시적으로 제시한다. 응용으로, 두 실수 행렬이 가역 행 변환과 가역 열 스케일링으로 서로 옮겨지는지를 판정한다. 판정 조건은 정사각형 기저의 원소마다 하나씩 주어지는, Plücker 비의 부호와 절댓값에 대한 정사각형 조건이다. 부호 조건에는 이 기저가 단순한 $\R$\nobreakdash-기저가 아니라 $\Z$\nobreakdash-기저라는 사실이 필요하다.
 
 \vspace{1.2em}\noindent\textbf{키워드.} 매트로이드, 토릭 아이디얼, 기저 교환, 격자 기저, White 추측, Plücker 좌표
 
@@ -66,9 +66,9 @@
 
 %====================================================================
 \section{서론}\label{sec:intro}
-White는 모든 매트로이드 $M$의 토릭 아이디얼 $I_M$이 대칭 기저 교환에서 오는 이차 이항식들로 생성된다고 추측하였다~\cite{W80}. 이 추측은 계수 $3$ 이하의 매트로이드~\cite{Ka10}, 그래프 매트로이드~\cite{Bl08}, 격자 경로 매트로이드~\cite{Sc11}, sparse paving 매트로이드~\cite{Bo13}, strongly base orderable 매트로이드~\cite{LM14}에 대해 알려져 있다. 또한 모든 매트로이드에서 무관 아이디얼에 대한 포화까지는 성립하며~\cite{LM14}, 계수를 고정하면 높은 차수에서 성립한다~\cite{La21}. 또한 기저 하나를 더하거나 빼도 보존되며~\cite{HMW25}, 원소가 $7$개 이하인 매트로이드의 Gröbner 기저가 계산되었다~\cite{HHKS20}. regular 매트로이드와 split 매트로이드에서는 기저 쌍 사이의 교환 거리도 연구되었다~\cite{BMS24,BS24}. 2026년에 Larson이 White 추측의 반례를 보고하였고~\cite{Lar26}, Fano 또는 쌍대 Fano minor를 가진 매트로이드에는 이차 Gröbner 기저가 없음이 밝혀졌다~\cite{BCLLM26,DFMR26}.
+White는 모든 매트로이드 $M$의 토릭 아이디얼 $I_M$이 대칭 기저 교환에서 오는 이차 이항식들로 생성된다고 추측하였다~\cite{W80}. 이 추측은 계수 $3$ 이하의 매트로이드~\cite{Ka10}, 그래프 매트로이드~\cite{Bl08}, 격자 경로 매트로이드~\cite{Sc11}, sparse paving 매트로이드~\cite{Bo13}, paving 매트로이드~\cite{YY25}, strongly base orderable 매트로이드~\cite{LM14}에 대해 알려져 있다. 또한 모든 매트로이드에서 무관 아이디얼에 대한 포화를 취하면 성립하며~\cite{LM14}, 계수를 고정하면 높은 차수에서 성립한다~\cite{La21}. 이 추측은 기저 하나를 더하거나 빼도 보존되며~\cite{HMW25}, 원소가 $7$개 이하인 매트로이드 가운데 두 개를 제외한 모든 경우에 Gröbner 기저가 계산되었다~\cite{HHKS20}. regular 매트로이드와 split 매트로이드에서는 기저 쌍 사이의 교환 거리도 연구되었다~\cite{BMS24,BS24}. 2026년에 Larson이 White 추측의 반례를 보고하였고~\cite{Lar26}, Fano 또는 쌍대 Fano minor를 가진 매트로이드에는 이차 Gröbner 기저가 없음이 밝혀졌다~\cite{BCLLM26,DFMR26}.
 
-대수 통계학의 용어를 빌리면~\cite{DS98}, White 추측은 교환 이동(exchange move)들이 $I_M$의 격자의 \emph{Markov basis}를 이룬다는 주장이며, 이는 일반적으로 성립하지 않는다. 이동들의 집합에 대한 더 약한 요구는 그것이 \emph{lattice basis}, 즉 같은 격자의 $\Z$\nobreakdash-기저를 포함하는 것이다. 본 논문은 이 약한 요구가 모든 매트로이드에서 성립함을 증명한다(정리~\ref{thm:main}). 이 진술은 $I_M$ 자체의 생성원이 아니라 $I_M$의 격자에 관한 것이므로, 위의 모든 결과와 양립한다(주석~\ref{rem:markov}, \ref{rem:white}).
+대수 통계학의 용어를 빌리면~\cite{DS98}, White 추측은 교환 이동(exchange move)들이 $I_M$의 격자의 \emph{Markov basis}를 이룬다는 주장이며, 이는 일반적으로 성립하지 않는다. 이와 다른, 격자 수준의 요구는 이동들의 집합이 \emph{lattice basis}, 즉 같은 격자의 $\Z$\nobreakdash-기저를 포함하는 것이다. 본 논문은 이 요구가 계수가 $1$ 이상인 모든 매트로이드에서 성립함을 증명한다(정리~\ref{thm:main}). 이 진술은 $I_M$ 자체의 생성원이 아니라 $I_M$의 격자에 관한 것이므로, 위의 모든 결과와 양립한다(주석~\ref{rem:markov}, \ref{rem:white}).
 
 $M$을 $[n]=\{1,\dots,n\}$ 위의 계수 $k$인 매트로이드, $\bs$를 그 기저들의 집합, $N=|\bs|$라 하자. \emph{기저 결합 행렬} $\AM\in\{0,1\}^{n\times N}$의 $I$번째 열은 기저 $I$의 지시벡터 $\ind_I$이다. 그 정수 핵
 \[
@@ -76,7 +76,7 @@ $M$을 $[n]=\{1,\dots,n\}$ 위의 계수 $k$인 매트로이드, $\bs$를 그 �
 \]
 은 계수 $N-\rank\AM$인 자유 아벨 군이며, $M$의 토릭 아이디얼 $I_M$, 즉 사상 $y_I\mapsto\prod_{i\in I}x_i$의 핵에 대응하는 격자이다~\cite{W77,St96}.
 
-기저 교환은 이 격자의 자연스러운 원소를 만든다. $i\ne j$이고, $B\ne B'$은 $i,j\notin B\cup B'$인 $(k-1)$\nobreakdash-집합이라 하자. $B+i$, $B+j$, $B'+i$, $B'+j$가 모두 기저이면 $\Z^n$에서 $\ind_{B+i}-\ind_{B+j}=e_i-e_j=\ind_{B'+i}-\ind_{B'+j}$이다. 따라서 $I\in\bs$에 해당하는 $\Z^{\bs}$의 표준 기저 벡터를 $e_I$로 쓰면
+기저 교환은 이 격자의 자연스러운 원소를 만든다. $i\ne j$이고, $B,B'$은 $i,j\notin B\cup B'$인 서로 다른 $(k-1)$\nobreakdash-집합이라 하자. $B+i$, $B+j$, $B'+i$, $B'+j$가 모두 기저이면 $\Z^n$에서 $\ind_{B+i}-\ind_{B+j}=e_i-e_j=\ind_{B'+i}-\ind_{B'+j}$이다. 따라서 $I\in\bs$에 해당하는 $\Z^{\bs}$의 표준 기저 벡터를 $e_I$로 쓰면
 \[
 z_{i,j;B,B'}=e_{B+i}-e_{B+j}-e_{B'+i}+e_{B'+j}\in\kerZ
 \]
@@ -120,11 +120,11 @@ z_{i,j;B,B'}=e_{B+i}-e_{B+j}-e_{B'+i}+e_{B'+j}\in\kerZ
 I_M\,K[y^{\pm1}]=(f_1,\dots,f_c)\,K[y^{\pm1}],\qquad I_M=(f_1,\dots,f_c):\Big(\prod_{I\in\bs}y_I\Big)^{\infty}
 \]
 을 만족하는 $c$개의 대칭 교환 이항식 $f_1,\dots,f_c$가 존재한다는 것과 동치이다(따름정리~\ref{cor:toric}). Krull 높이 정리에 의해 $c$는 생성원 개수의 가능한 최솟값이다. 기하적으로 말하면, $M$의 토릭 다양체 중 토러스 $(K^\times)^{\bs}$ 안에 놓인 부분은 $c$개의 대칭 교환 이차식의 완전 교차이다.
-\item \emph{국소 증명서.} $\Theta$를 임의의 아벨 군, 예를 들어 $\Z/2$나 $\R$이라 하자. 함수 $\chi:\bs\to\Theta$가 정사각형 기저를 이루는 $c$개의 정사각형에 대해 정사각형 조건 $\chi(B+i)-\chi(B+j)-\chi(B'+i)+\chi(B'+j)=0$을 만족하면, 모든 $u\in\kerZ$에 대해 $\sum_I u_I\chi(I)=0$이다. 사상 $u\mapsto\sum_Iu_I\chi(I)$는 생성 집합에서 $0$이 되는 준동형사상이기 때문이다. $\Z/2$ 같은 꼬임 군(torsion group)에서는 정사각형으로 된 $\R$\nobreakdash-기저만으로는 일반적으로 충분하지 않은데, 그러한 기저가 유한 지표의 진부분격자만 생성할 수 있기 때문이다(주석~\ref{rem:index}). 또한 기저가 아닌 정사각형 생성 집합은 $c$개보다 많은 원소를 가진다. $\Theta=\Z/2$인 경우와 $\Theta=\R$인 경우를 함께 쓰면, 두 실수 행렬이 가역 행 변환과 가역 열 스케일링만큼 차이 나는지에 대한 판정법을 얻는다(\S\ref{sec:criterion}).
+\item \emph{국소 증명서.} $\Theta$를 임의의 아벨 군, 예를 들어 $\Z/2$나 $\R$이라 하자. 함수 $\chi:\bs\to\Theta$가 정사각형 기저를 이루는 $c$개의 정사각형에 대해 정사각형 조건 $\chi(B+i)-\chi(B+j)-\chi(B'+i)+\chi(B'+j)=0$을 만족하면, 모든 $u\in\kerZ$에 대해 $\sum_I u_I\chi(I)=0$이다. 사상 $u\mapsto\sum_Iu_I\chi(I)$는 생성 집합에서 $0$이 되는 준동형사상이기 때문이다. $\Z/2$ 같은 꼬임 군(torsion group)에서는 정사각형으로 된 $\R$\nobreakdash-기저만으로는 일반적으로 충분하지 않은데, 그러한 기저가 유한 지수의 진부분격자만 생성할 수 있기 때문이다(주석~\ref{rem:index}). 또한 기저가 아닌 정사각형 생성 집합은 $c$개보다 많은 원소를 가진다. $\Theta=\Z/2$인 경우와 $\Theta=\R$인 경우를 함께 쓰면, 두 실수 행렬이 가역 행 변환과 가역 열 스케일링으로 서로 옮겨지는지에 대한 판정법을 얻는다(\S\ref{sec:criterion}).
 \end{enumerate}
 
 
-\medskip\noindent\textbf{증명의 개요.} 증명은 \LM{} 정리를 쓰지 않으며, 그림~\ref{fig:map}에 요약되어 있다. 직합을 통해 문제를 연결 매트로이드로 환원한다(\S\ref{sec:dsum}). 연결 매트로이드 $M$과 $M\setminus v$가 연결인 원소 $v$에 대해, 완전열 $0\to\ker_\Z A_{M\setminus v}\to\kerZ\to\Gamma\to0$을 이용하면 $[n]-v$ 위의 어떤 그래프가 연결일 때 $M\setminus v$의 정사각형 기저를 $M$으로 들어 올릴 수 있다(\S\ref{sec:conn}). 이 그래프가 연결이라는 것은 $v$를 지나는 $M$의 cocircuit들, 즉 $v$를 지나는 $M^*$의 circuit들이 나머지 모든 원소를 이어 준다는 것과 같다. 본 논문은 연결 매트로이드 $P$에서 $P/v$가 연결이면 $v$를 지나는 circuit들이 나머지 모든 원소를 이어 줌을 증명한다. $P=M^*$일 때 이는 정확히 $M\setminus v$가 연결인 경우이다(정리~\ref{thm:phi}, \S\ref{sec:phiproof}). $M\setminus v$ 또는 $M/v$가 연결이라는 Tutte 정리로 귀납이 완성된다~\cite[정리~4.3.1]{Ox11}. 균등 매트로이드의 명시적 기저는 \S\ref{sec:uniform}에서 준다.
+\medskip\noindent\textbf{증명의 개요.} 증명은 \LM{} 정리를 쓰지 않으며, 그림~\ref{fig:map}에 요약되어 있다. 직합을 통해 문제를 연결 매트로이드로 환원한다(\S\ref{sec:dsum}). 연결 매트로이드 $M$과, $M\setminus v$가 연결이 되는 원소 $v$에 대해, 완전열 $0\to\ker_\Z A_{M\setminus v}\to\kerZ\to\Gamma\to0$을 이용하면 $[n]-v$ 위의 어떤 그래프가 연결일 때 $M\setminus v$의 정사각형 기저를 $M$으로 들어 올릴 수 있다(\S\ref{sec:conn}). 이 그래프가 연결이라는 것은 $v$를 지나는 $M$의 cocircuit들, 즉 $v$를 지나는 $M^*$의 circuit들이 나머지 모든 원소를 이어 준다는 것과 같다. 본 논문은 연결 매트로이드 $P$에서 $P/v$가 연결이면 $v$를 지나는 circuit들이 나머지 모든 원소를 이어 줌을 증명한다. $P=M^*$일 때 이는 정확히 $M\setminus v$가 연결인 경우이다(정리~\ref{thm:phi}, \S\ref{sec:phiproof}). $M\setminus v$ 또는 $M/v$가 연결이라는 Tutte 정리로 귀납이 완성된다~\cite[정리~4.3.1]{Ox11}. 균등 매트로이드의 명시적 기저는 \S\ref{sec:uniform}에서 준다.
 
 \begin{figure}[H]
 \centering
@@ -134,8 +134,8 @@ I_M\,K[y^{\pm1}]=(f_1,\dots,f_c)\,K[y^{\pm1}],\qquad I_M=(f_1,\dots,f_c):\Big(\p
   arr/.style={-{Stealth[length=2.2mm]},thick}]
 \node[key] (phi) {$P$와 $P/v$가 연결이면\\ $v$를 지나는 circuit들이 $E(P)-v$를 잇는다\\ \footnotesize 정리~\ref{thm:phi}, \S\ref{sec:phiproof}};
 \node[box,right=1.0cm of phi] (H) {$M/v$의 기저들 위의\\ 그래프 $H$가 연결이다\\ \footnotesize 명제~\ref{prop:phi} (쌍대성)};
-\node[box,below=0.9cm of H] (lift) {완전열과 spanning tree:\\ $M\setminus v$의 정사각형 기저를 $M$으로\\ \footnotesize 정리~\ref{thm:exact}, \ref{thm:tree}};
-\node[box,below=0.9cm of phi] (tutte) {Tutte: $M\setminus v$ 또는 $M/v$가 연결;\\ $M$과 $M^*$의 정사각형 기저는 동치\\ \footnotesize Tutte 정리, 보조정리~\ref{lem:dual}};
+\node[box,below=0.9cm of H] (lift) {완전열과 spanning tree:\\ $M\setminus v$의 정사각형 기저를\\ $M$으로 들어 올림\\ \footnotesize 정리~\ref{thm:exact}, \ref{thm:tree}};
+\node[box,below=0.9cm of phi] (tutte) {Tutte: $M\setminus v$ 또는 $M/v$가 연결;\\ 정사각형 기저의 존재는 $M$과 $M^*$에서 동치\\ \footnotesize Tutte 정리, 보조정리~\ref{lem:dual}};
 \node[box,below=0.9cm of lift] (conn) {모든 연결 매트로이드는\\ 정사각형 기저를 가진다\\ \footnotesize 정리~\ref{thm:cond}};
 \node[box,below=0.9cm of tutte] (dsum) {직합은 정사각형 기저를\\ 보존한다\\ \footnotesize 명제~\ref{prop:dsum}};
 \node[key,minimum height=0.9cm] (main) at ($(dsum.south)!0.5!(conn.south)+(0,-1.15)$) {정사각형 기저 정리~\ref{thm:main}};
@@ -146,7 +146,7 @@ I_M\,K[y^{\pm1}]=(f_1,\dots,f_c)\,K[y^{\pm1}],\qquad I_M=(f_1,\dots,f_c):\Big(\p
 \draw[arr] (conn.south) |- (main.east);
 \draw[arr] (dsum.south) |- (main.west);
 \end{tikzpicture}
-\caption{증명의 구조. 왼쪽 위의 음영 상자는 격자 논증만으로 처리되지 않는 유일한 단계이다. \S\ref{sec:phiproof}에서 자체적인 증명을 주고, 주석~\ref{rem:lehman}에서 Lehman 정리로부터 유도한다.}
+\caption{증명의 구조. 왼쪽 위의 음영 상자는 증명의 중심이 되는 매트로이드 논증이다. \S\ref{sec:phiproof}에서 자체적인 증명을 주고, 주석~\ref{rem:lehman}에서 Lehman 정리로부터 유도한다.}
 \label{fig:map}
 \end{figure}
 
@@ -154,7 +154,7 @@ I_M\,K[y^{\pm1}]=(f_1,\dots,f_c)\,K[y^{\pm1}],\qquad I_M=(f_1,\dots,f_c):\Big(\p
 
 %====================================================================
 \section{준비}\label{sec:prelim}
-매트로이드 용어는 Oxley의 책~\cite{Ox11}을 따른다. 집합 $I$와 원소 $a$에 대해 $I+a=I\cup\{a\}$, $I-a=I\setminus\{a\}$로 쓴다. 모든 기저의 크기가 $k$이므로 $\AM^{T}\ind_n=k\,\ind_{\bs}$이고, 특히 $k\ge1$이면 모든 $u\in\kerZ$의 좌표합은 $0$이다. 체 $K$ 위에서 토릭 아이디얼 $I_M\subseteq K[y_I:I\in\bs]$는 $y_I\mapsto\prod_{i\in I}x_i$의 핵이며
+매트로이드 용어는 Oxley의 책~\cite{Ox11}를 따른다. 집합 $I$와 원소 $a$에 대해 $I+a=I\cup\{a\}$, $I-a=I\setminus\{a\}$로 쓴다. 모든 기저의 크기가 $k$이므로 $\AM^{T}\ind_n=k\,\ind_{\bs}$이고, 특히 $k\ge1$이면 모든 $u\in\kerZ$의 좌표합은 $0$이다. 체 $K$ 위에서 토릭 아이디얼 $I_M\subseteq K[y_I:I\in\bs]$는 $y_I\mapsto\prod_{i\in I}x_i$의 핵이며
 \[
 I_M=\big\langle y^{u^+}-y^{u^-}:u\in\kerZ\big\rangle
 \]
@@ -176,7 +176,7 @@ I_M=\big\langle y^{u^+}-y^{u^-}:u\in\kerZ\big\rangle
 \begin{enumerate}[label=(\alph*),itemsep=1pt]
 \item $\rank M=0$이면 $\bs=\{\varnothing\}$이고 $\kerZ=\Z$이지만 정사각형은 없다.
 \item 루프를 삭제해도 $\kerZ$과 정사각형들의 집합은 바뀌지 않는다.
-\item $c$가 코루프이고 $\rank M'\ge1$일 때 $M=M'\oplus\{c\}$이면, $I'\mapsto I'+c$는 정사각형을 정사각형으로 보내는 동형사상 $\ker_\Z A_{M'}\cong\kerZ$을 유도한다. $\rank M'=0$이면 $\kerZ=0$이다.
+\item $M=M'\oplus\{c\}$이고 $c$가 코루프이며 $\rank M'\ge1$이면, $I'\mapsto I'+c$는 정사각형을 정사각형으로 보내는 동형사상 $\ker_\Z A_{M'}\cong\kerZ$을 유도한다. $\rank M'=0$이면 $\kerZ=0$이다.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -210,7 +210,7 @@ $k_1,k_2\ge1$이고 $M_1,M_2$가 정사각형 기저 $\mathcal R_1,\mathcal R_2$
 \]
 이다. 앞의 두 성분은 두 인자의 핵을 담고, 세 번째 성분은 상호작용 항들로 이루어진다. 1단계에 의해 각 성분은 $\kerZ$에 속한다. 여기서 $V_1^0\otimes V_2^0$은 정확히 $\operatorname{row}(f)=0$, $\operatorname{col}(f)=0$인 $f$들의 집합이다. $f\in\kerZ$에 대해 $f'=f-\operatorname{row}(f)\otimes e_{I_2^0}-e_{I_1^0}\otimes\operatorname{col}(f)$로 두면, $\sum\operatorname{row}(f)=\sum\operatorname{col}(f)=0$이므로 $\operatorname{row}(f')=\operatorname{col}(f')=0$이다. $\operatorname{row}$와 $\operatorname{col}$을 적용하면 합이 직합임을 알 수 있다.
 
-\emph{3단계($V_1^0/K_1$의 기저).} 격자 $\Lambda_1=A_{M_1}(V_1^0)$은 $J,J'\in\bs_1$에 대한 벡터 $\ind_J-\ind_{J'}$들로 생성된다. 기저 교환 그래프가 연결이므로~\cite{Br69} 인접한 쌍만으로 충분하고, $J=D+a$, $J'=D+b$이면 $e_a-e_b$를 얻는다. 어떤 $D$에 대해 $D+a,D+b\in\bs_1$일 때 $a\sim b$로 정한 $E_1$ 위의 그래프를 $G_1$이라 하고, $F_1$을 $G_1$의 spanning forest라 하자. 벡터 $e_a-e_b$, $\{a,b\}\in F_1$은 $\Lambda_1$의 $\Z$\nobreakdash-기저를 이룬다. $A_{M_1}(V_1)=\Lambda_1+\Z\ind_{J_0}$이고 $\ind_{J_0}$의 좌표합은 $k_1\neq0$이므로 $|F_1|=\rank\Lambda_1=\rho_1-1$이다. 각 변 $\{a,b\}\in F_1$에 대해 $D_{ab}+a,D_{ab}+b\in\bs_1$인 $D_{ab}$를 고르고 $u_{ab}=e_{D_{ab}+a}-e_{D_{ab}+b}\in V_1^0$으로 둔다. 그러면 $A_{M_1}u_{ab}=e_a-e_b$이고, $K_1=\ker A_{M_1}\cap V_1^0$이므로 잉여류(coset) $\overline{u_{ab}}$들은 $V_1^0/K_1\cong\Lambda_1$의 $\Z$\nobreakdash-기저를 이룬다.
+\emph{3단계($V_1^0/K_1$의 기저).} 격자 $\Lambda_1=A_{M_1}(V_1^0)$은 $J,J'\in\bs_1$에 대한 벡터 $\ind_J-\ind_{J'}$들로 생성된다. 기저 교환 그래프가 연결이므로~\cite{Br69} 인접한 쌍만으로 충분하고, $J=D+a$, $J'=D+b$이면 $e_a-e_b$를 얻는다. 어떤 $D$에 대해 $D+a,D+b\in\bs_1$일 때 $a\sim b$로 정한 $E_1$ 위의 그래프를 $G_1$이라 하고, $F_1$을 $G_1$의 spanning forest라 하자. 벡터 $e_a-e_b$ ($\{a,b\}\in F_1$)들은 $\Lambda_1$의 $\Z$\nobreakdash-기저를 이룬다. $A_{M_1}(V_1)=\Lambda_1+\Z\ind_{J_0}$이고 $\ind_{J_0}$의 좌표합은 $k_1\neq0$이므로 $|F_1|=\rank\Lambda_1=\rho_1-1$이다. 각 변 $\{a,b\}\in F_1$에 대해 $D_{ab}+a,D_{ab}+b\in\bs_1$인 $D_{ab}$를 고르고 $u_{ab}=e_{D_{ab}+a}-e_{D_{ab}+b}\in V_1^0$으로 둔다. 그러면 $A_{M_1}u_{ab}=e_a-e_b$이고, $K_1=\ker A_{M_1}\cap V_1^0$이므로 잉여류(coset) $\overline{u_{ab}}$들은 $V_1^0/K_1\cong\Lambda_1$의 $\Z$\nobreakdash-기저를 이룬다.
 
 \emph{4단계(기저).} $\kerZ$의 부분군 $K_1\otimes V_2=K_1\otimes e_{I_2^0}\oplus K_1\otimes V_2^0$에 대한 몫
 \[
@@ -222,7 +222,7 @@ $k_1,k_2\ge1$이고 $M_1,M_2$가 정사각형 기저 $\mathcal R_1,\mathcal R_2$
 \item $s\in\mathcal R_2$에 대한 $e_{I_1^0}\otimes s$;
 \item $\{a,b\}\in F_1$, $I\in\bs_2\setminus\{I_2^0\}$에 대한 $u_{ab}\otimes(e_I-e_{I_2^0})$.
 \end{enumerate}
-그 개수는 $N_1N_2-\rho_1-\rho_2+1=N_1N_2-\rank\AM$이다. $\AM f=(A_{M_1}\operatorname{row}f,\,A_{M_2}\operatorname{col}f)$이고, 쌍 $(\operatorname{row}f,\operatorname{col}f)$는 정확히 좌표합이 같은 쌍들이기 때문이다.
+그 개수는 $N_1N_2-\rho_1-\rho_2+1=N_1N_2-\rank\AM$이다. $\AM f=(A_{M_1}\operatorname{row}f,\,A_{M_2}\operatorname{col}f)$이고, $f$가 $\Z^{\bs}$ 전체를 움직일 때 쌍 $(\operatorname{row}f,\operatorname{col}f)$는 정확히 좌표합이 같은 쌍 전체이기 때문이다.
 
 \emph{5단계(모두 정사각형).} $w=z_{i,j;D,D'}$이면 $w\otimes e_I=z_{i,j;D\sqcup I,\,D'\sqcup I}$이고, (2)도 마찬가지이다. (3)에 대해서는 $B=D_{ab}\sqcup I$, $B'=D_{ab}\sqcup I_2^0$, $i=a$, $j=b$로 둔다. 네 집합 $(D_{ab}+a)\sqcup I$, $(D_{ab}+b)\sqcup I$, $(D_{ab}+a)\sqcup I_2^0$, $(D_{ab}+b)\sqcup I_2^0$은 기저이고, $a,b\notin B\cup B'$, $B\ne B'$이며, 해당 정사각형은 $u_{ab}\otimes(e_I-e_{I_2^0})$이다.
 \end{proof}
@@ -293,7 +293,7 @@ $n$에 대한 귀납법을 쓴다. $n=1$이면 매트로이드는 코루프이�
 설정 (S)에서 $v\in\cl(A)\cap\cl(B)$이다.
 \end{lemma}
 \begin{proof}
-$P$가 연결이므로 모든 $x\in X$는 $v\in C$인 어떤 circuit $C$에 속하고, $C-v$는 $x$가 있는 쪽에 놓인다. 따라서 $v\in\cl(C-v)$는 그쪽의 폐포에 속하며, 양쪽 모두 공집합이 아니다.
+$P$가 연결이므로 모든 $x\in X$는 $v\in C$인 어떤 circuit $C$에 속하고, $C-v$는 $x$가 있는 쪽에 놓인다. 따라서 $v\in\cl(C-v)$는 그쪽의 폐포에 속한다. 양쪽 모두 공집합이 아니므로, $A$의 원소와 $B$의 원소에 각각 적용하면 $v\in\cl(A)\cap\cl(B)$이다.
 \end{proof}
 
 \begin{lemma}\label{lem:A}
@@ -309,9 +309,9 @@ $I$를 $B$의 기저라 하자. 보조정리~\ref{lem:phi1}에 의해 $v\in\cl(I
 \begin{proof}
 보조정리~\ref{lem:phi1}과 부분모듈성에 의해 $r(A)+r(B)=r(A+v)+r(B+v)\ge r(P)+r(\{v\})=r(X)+1$이므로 $\lambda\ge1$이다. (S)를 만족하면서 $\lambda\ge2$인 $(P,v,A,B)$가 있다고 하고, 그중 $|E(P)|$가 최소인 것을 고르자.
 
-$A=\{a\}$이면 $r(A)=1$이고 $\lambda\le1+r(B)-r(X)\le1$이다. 따라서 $|A|\ge2$이고, 마찬가지로 $|B|\ge2$이다. 다음 세 가지 관찰을 쓴다. (1) $e\in A$에 대해 조건 (S)는 $P\setminus e$와 $P/e$로 ($A$ 대신 $A-e$로) 이어진다. minor에서 $v$를 지나는 circuit은 $v$를 지나는 $P$의 circuit에 포함되기 때문이다. (2) $e\in A$에 대해 $\lambda(P/e)=\lambda-[e\in\cl(B)]$이다(여기서 $[\,\cdot\,]$는 명제가 참이면 $1$, 거짓이면 $0$이다). $r_{P/e}(A-e)=r(A)-1$, $r_{P/e}(B)=r(B+e)-1$, $r_{P/e}(X-e)=r(X)-1$이기 때문이다. (3) $P|A$의 코루프가 아닌 $e\in A$에 대해 $\lambda(P\setminus e)=\lambda$이다. 따라서 $P/e$ 또는 $P\setminus e$가 연결이고 $\lambda$가 보존되면 더 작은 반례를 얻는다.
+$A=\{a\}$이면 $r(A)=1$이고 $\lambda\le1+r(B)-r(X)\le1$이다. 따라서 $|A|\ge2$이고, 마찬가지로 $|B|\ge2$이다. 다음 세 가지 관찰을 쓴다. (1) $e\in A$에 대해 조건 (S)는 $P\setminus e$와 $P/e$에서도 ($A$ 대신 $A-e$로) 그대로 성립한다. minor에서 $v$를 지나는 circuit은 $v$를 지나는 $P$의 circuit에 포함되기 때문이다. (2) $e\in A$에 대해 $r_{P/e}(A-e)=r(A)-1$, $r_{P/e}(B)=r(B+e)-1$, $r_{P/e}(X-e)=r(X)-1$이므로 $\lambda(P/e)=\lambda-[e\in\cl(B)]$이다(여기서 $[\,\cdot\,]$는 명제가 참이면 $1$, 거짓이면 $0$이다). (3) $P|A$의 코루프가 아닌 $e\in A$에 대해 $\lambda(P\setminus e)=\lambda$이다. 따라서 $P/e$ 또는 $P\setminus e$가 연결이고 $\lambda$가 보존되면 더 작은 반례를 얻는다.
 
-\emph{1단계: $A$와 $B$는 독립이다.} $e\in A$라 하자. $e$가 $v$와 평행하면 $v$는 $P/e$의 루프이므로 $P/e$는 비연결이다. 그렇지 않으면 보조정리~\ref{lem:A}에 의해 $e\notin\cl(B)$이므로 (2)에 의해 $\lambda(P/e)=\lambda$이고, 최소성에 의해 역시 $P/e$는 비연결이어야 한다. Tutte 정리에 의해 $P\setminus e$는 연결이므로, (3)과 최소성에 의해 $e$는 $P|A$의 코루프여야 한다. 따라서 $A$는 독립이고, $B$도 마찬가지이다.
+\emph{1단계: $A$와 $B$는 독립이다.} $e\in A$라 하자. $e$가 $v$와 평행하면 $v$는 $P/e$의 루프이므로 $P/e$는 비연결이다. 그렇지 않으면 보조정리~\ref{lem:A}에 의해 $e\notin\cl(B)$이므로 (2)에 의해 $\lambda(P/e)=\lambda$이고, 최소성에 의해 $P/e$는 비연결이어야 한다. Tutte 정리에 의해 $P\setminus e$는 연결이므로, (3)과 최소성에 의해 $e$는 $P|A$의 코루프여야 한다. 따라서 $A$는 독립이고, $B$도 마찬가지이다.
 
 \emph{2단계: 모순.} $A$가 독립이므로 $A$에서 $v$와 평행한 원소는 많아야 하나이고 $|A|\ge2$이다. $v$와 평행하지 않은 $e\in A$를 잡자. 1단계에 의해 $P/e$는 비연결이다. $W$를 $v$를 포함하는 $P/e$의 연결 성분, $R=E(P)\setminus(W+e)\ne\varnothing$이라 하자. $y\in R$에 대해 $v$와 $y$를 지나는 $P$의 circuit $C$를 잡는다. $e\in C$이면 $C-e$는 $v$와 $y$를 포함하는 $P/e$의 circuit이고, $e\notin\cl(C)$이면 $C$ 자체가 $P/e$의 circuit이다. 두 경우 모두 $y\in W$가 되어 모순이다. 따라서 $e\in\cl(C)\setminus C$이다. $C-v\subseteq B$이면 보조정리~\ref{lem:phi1}에 의해 $e\in\cl(B)$이고, 보조정리~\ref{lem:A}에 의해 $e$는 $v$와 평행하게 되어 가정에 어긋난다. 그러므로 $C-v\subseteq A$이고, 따라서 $R\subseteq A-e$이다. $A$가 독립이므로 $r_{P/e}(R)=|R|$이고, $P/e=(P/e)|W\oplus(P/e)|R$에서 $r_{P/e}(W)=r(P/e)-|R|$이다. $e$는 루프가 아니므로 $r(W+e)=r_{P/e}(W)+1$이고 $r(P/e)=r(P)-1$이다. $W+e=E(P)\setminus R$이므로 $r(E(P)\setminus R)=r(P)-|R|$을 얻는다. 원소 하나를 삭제하면 계수는 많아야 $1$만큼 줄어들므로 $R$의 모든 원소 $x$는 $P$의 코루프이다($x$를 먼저 삭제하면, 나머지 $|R|-1$번의 삭제로는 계수가 많아야 $|R|-1$만큼 줄어든다). 이는 $P$가 연결이라는 데 모순이다.
 \end{proof}
@@ -326,7 +326,7 @@ $A=\{a\}$이면 $r(A)=1$이고 $\lambda\le1+r(B)-r(X)\le1$이다. 따라서 $|A|
 
 %====================================================================
 \section{균등 매트로이드}\label{sec:uniform}
-균등 매트로이드에서는 정리~\ref{thm:main}의 구성을, 선택이 전혀 필요 없는 명시적 정사각형 기저로 대신할 수 있다. $[n]$의 $k$\nobreakdash-부분집합들을 colex 순서로 정렬한다. 즉 $\max(X\triangle Y)\in Y$이면 $X\colex Y$이다. $(k-1)$\nobreakdash-부분집합에도 같은 순서를 쓴다. $j$를 포함하지 않는 가장 작은 $(k-1)$\nobreakdash-부분집합은 $j\le k-1$이면 $[k]-j$이고, $j\ge k$이면 $[k-1]$이다.
+균등 매트로이드에서는 정리~\ref{thm:main}의 증명에 나오는 구성을, 선택이 전혀 필요 없는 명시적 정사각형 기저로 대신할 수 있다. $[n]$의 $k$\nobreakdash-부분집합들을 colex 순서로 정렬한다. 즉 $\max(X\triangle Y)\in Y$이면 $X\colex Y$이다. $(k-1)$\nobreakdash-부분집합에도 같은 순서를 쓴다. $j$를 포함하지 않는 가장 작은 $(k-1)$\nobreakdash-부분집합은 $j\le k-1$이면 $[k]-j$이고, $j\ge k$이면 $[k-1]$이다.
 
 \begin{lemma}[단위삼각성]\label{lem:unitri}
 $S$를 $N-\rank\AM$개의 기저로 이루어진 집합이라 하고, 각 $s\in S$에 대해 $s$\nobreakdash-좌표가 $\pm1$이고 지지집합이 $S$와 만나는 원소가 모두 colex 순서로 $s$ 이하인 정사각형 $r_s$가 존재한다고 하자. 그러면 $\{r_s:s\in S\}$는 $\kerZ$의 $\Z$\nobreakdash-기저이다.
@@ -340,7 +340,7 @@ $1\le k\le n-1$이면 $\rank A_{U_{k,n}}=n$이고, 다음 정사각형들은 $\k
 \[
 T=\{[k]\}\cup\{[k-1]+i:k<i\le n\}\cup\{([k]-j)+(k+1):1\le j\le k-1\}
 \]
-을 $n$개의 $k$\nobreakdash-부분집합으로 이루어진 집합, $S$를 그 여집합이라 하자. $s\in S$에 대해 $i=\max s$, $B=s-i$, $W_s=[i-1]\setminus B$로 둔다. $W_s$가 $k$ 이상인 원소 $j$를 포함하면 $B'=[k-1]$로 두고, 그렇지 않으면 $j\in W_s$를 골라 $B'=[k]-j$로 둔다. 이때 $r_s=z_{i,j;B,B'}$이다.
+을 $n$개의 $k$\nobreakdash-부분집합으로 이루어진 집합, $S$를 그 여집합이라 하자. $s\in S$에 대해 $i=\max s$, $B=s-i$, $W_s=[i-1]\setminus B$로 둔다. $W_s$가 $k$ 이상인 원소를 포함하면 그중 가장 작은 원소를 $j$로 하고 $B'=[k-1]$로 두며, 그렇지 않으면 $j=\min W_s$로 하고 $B'=[k]-j$로 둔다. 이때 $r_s=z_{i,j;B,B'}$이다.
 \end{proposition}
 \begin{proof}
 $\AM\AM^{T}$의 대각 성분은 $\binom{n-1}{k-1}$이고 비대각 성분은 $\binom{n-2}{k-2}$이므로, 고윳값 $\binom{n-2}{k-1}$($\ind_n^{\perp}$ 위)과 $\binom{n-1}{k-1}+(n-1)\binom{n-2}{k-2}$가 모두 양수이고 $\rank\AM=n$이다. $T$의 세 부분은 서로소이므로 $|S|=N-n$이다.
@@ -370,13 +370,13 @@ $M$을 계수가 $1$ 이상인 매트로이드, $c=N-\rank\AM=\operatorname{ht}I
 \begin{proof}
 $\mathcal Y$에서 $f_z=y^{z^-}(y^z-1)$이므로 $(f_z:z\in\mathcal R)\mathcal Y=(y^z-1:z\in\mathcal R)\mathcal Y$이다. $y^{v+w}-1=y^v(y^w-1)+(y^v-1)$이고 $y^{-v}-1=-y^{-v}(y^v-1)$이므로, 이 아이디얼은 격자 $L=\langle\mathcal R\rangle$에 대한 $\mathfrak a_L=(y^u-1:u\in L)\mathcal Y$와 같고, 마찬가지로 $I_M\mathcal Y=\mathfrak a_{\kerZ}$이다. 사상 $y^w\mapsto[w]$는 군대수로의 동형사상 $\mathcal Y/\mathfrak a_L\cong K[\Z^{\bs}/L]$을 유도하며, 이때 $y^u-1$은 $[u]-[0]$으로 간다. 서로 다른 군 원소는 일차독립이므로 $y^u-1\in\mathfrak a_L$일 필요충분조건은 $u\in L$이다. 따라서 (b)는 $L=\kerZ$과 동치이고, $|\mathcal R|=c=\rank\kerZ$이므로 이는 (a)와 동치이다.
 
-임의의 아이디얼 $J\subseteq S$에 대해 $J\mathcal Y\cap S=J:p^{\infty}$이다(격자 아이디얼에 관한 이러한 표준적 사실은 \cite{ES96}을 보라). 토릭 아이디얼은 소 아이디얼이고 단항식을 포함하지 않으므로 $I_M:p^\infty=I_M$이다. 따라서 (b)에서 (c)가 나온다. 역으로 (c)가 성립하면 $(f_z)\mathcal Y=((f_z):p^\infty)\mathcal Y=I_M\mathcal Y$이므로 (b)가 성립한다.
+임의의 아이디얼 $J\subseteq S$에 대해 $J\mathcal Y\cap S=J:p^{\infty}$이다(이는 표준적인 사실이다. \cite{ES96}를 보라). 토릭 아이디얼은 소 아이디얼이고 단항식을 포함하지 않으므로 $I_M:p^\infty=I_M$이다. 따라서 (b)에서 (c)가 나온다. 역으로 (c)가 성립하면 $(f_z)\mathcal Y=((f_z):p^\infty)\mathcal Y=I_M\mathcal Y$이므로 (b)가 성립한다.
 
-끝으로 $J\subseteq S$를 $J:p^\infty=I_M$인 임의의 아이디얼이라 하자. 위와 같이 $J\mathcal Y=I_M\mathcal Y$이다. 국소화는 곱셈적 집합과 만나지 않는 소 아이디얼의 높이를 보존하므로 이는 높이 $c$인 소 아이디얼이다. Krull 높이 정리에 의해 생성원이 $c$개보다 적은 아이디얼 위의 극소 소 아이디얼은 높이가 $c$보다 작으므로, $J\mathcal Y$, 따라서 $J$는 적어도 $c$개의 생성원이 필요하다.
+끝으로 $J\subseteq S$를 $J:p^\infty=I_M$인 임의의 아이디얼이라 하자. 위와 같이 $J\mathcal Y=I_M\mathcal Y$이다. 국소화는 곱셈적 집합과 만나지 않는 소 아이디얼의 높이를 보존하므로 이는 높이 $c$인 소 아이디얼이다. Krull 높이 정리에 의해 생성원이 $c$개보다 적은 아이디얼 위의 극소 소 아이디얼은 높이가 $c$보다 작으므로, $J\mathcal Y$에는, 따라서 $J$에도 적어도 $c$개의 생성원이 필요하다.
 \end{proof}
 
 \begin{remark}
-\LM{} 정리에서 $I_M=J_M:\mathfrak m^\infty\subseteq J_M:p^\infty\subseteq I_M$이 나온다. 여기서 $J_M$은 모든 대칭 교환 이항식이 생성하는 아이디얼이므로, 대칭 교환 이항식 전체는 $p$\nobreakdash-포화까지 $I_M$을 생성한다. 따름정리~\ref{cor:toric}은 그중 $c$개, 즉 가능한 최소 개수로 충분함을 보여 준다.
+\LM{} 정리에서 $I_M=J_M:\mathfrak m^\infty\subseteq J_M:p^\infty\subseteq I_M$이 나온다. 여기서 $J_M$은 모든 대칭 교환 이항식이 생성하는 아이디얼이므로, 대칭 교환 이항식 전체가 생성하는 아이디얼의 $p$\nobreakdash-포화는 $I_M$이다. 따름정리~\ref{cor:toric}은 그중 $c$개, 즉 가능한 최소 개수로 충분함을 보여 준다.
 \end{remark}
 
 \begin{remark}[Lattice basis와 Markov basis]\label{rem:markov}
@@ -384,7 +384,7 @@ $\mathcal Y$에서 $f_z=y^{z^-}(y^z-1)$이므로 $(f_z:z\in\mathcal R)\mathcal Y
 \end{remark}
 
 \subsection{가역 열 스케일링}\label{sec:criterion}
-Plücker 좌표에 대한 열 토러스의 작용은 고전적이며~\cite{GGMS87,DW91}, 행과 열 스케일링을 매트로이드 토릭 아이디얼과 함께 다룬 것으로는 slack realization space의 틀이 있다~\cite{BW19}. 아래 판정법은 이 틀 안의 응용이며, 정리~\ref{thm:main}의 정수성이 쓰이는 곳이다. 계수가 $k$인 $k\times n$ 실수 행렬 $Q,Q'$에 대해, 어떤 $G\in GL(k,\R)$과 가역 대각 행렬 $D$, 또는 대각 성분이 양수인 대각 행렬 $D$로 $Q'=GQD$가 되는지 묻는다. $k$\nobreakdash-부분집합 $I$에 대해 $p_I(Q)=\det Q_I$, $\bs(Q)=\{I:p_I(Q)\ne0\}$으로 둔다. $D=\operatorname{diag}(\mu_1,\dots,\mu_n)$에 대해
+Plücker 좌표에 대한 열 토러스의 작용은 고전적이며~\cite{GGMS87,DW91}, 행과 열 스케일링을 매트로이드 토릭 아이디얼과 함께 다룬 것으로는 slack realization space의 틀이 있다~\cite{BW19}. 아래 판정법은 이 틀 안의 응용이며, 정리~\ref{thm:main}의 정수성이 쓰이는 곳이다. 계수가 $k$인 $k\times n$ 실수 행렬 $Q,Q'$에 대해, 어떤 $G\in GL(k,\R)$과 가역 대각 행렬 $D$로 $Q'=GQD$가 되는지, 그리고 대각 성분이 양수인 대각 행렬 $D$로 그렇게 되는지를 묻는다. $k$\nobreakdash-부분집합 $I$에 대해 $p_I(Q)=\det Q_I$, $\bs(Q)=\{I:p_I(Q)\ne0\}$으로 둔다. $D=\operatorname{diag}(\mu_1,\dots,\mu_n)$에 대해
 \begin{equation}\label{eq:plucker}
 p_I(GQD)=\det(G)\Big(\prod_{i\in I}\mu_i\Big)p_I(Q)
 \end{equation}
@@ -413,17 +413,17 @@ z^T\eta=\log|\det G|\, z^T\ind_{\bs}+\sum_i\log|\mu_i|\,(\AM z)_i=0
 
 \emph{(b)의 충분성.} $D=\operatorname{diag}(e^{x_i})$로 두면, 공통 부호를 $\epsilon$이라 할 때 Plücker 벡터로서 $p(Q')=\epsilon\,p(QD)$이다. Plücker 매장의 단사성에 의해 $Q'$과 $QD$는 같은 행공간을 가지므로 어떤 $G\in GL(k,\R)$에 대해 $Q'=GQD$이고, $\det G=\epsilon$이다.
 
-\emph{(a)의 충분성.} $s_I\in\Z/2$로 $\epsilon_I=(-1)^{s_I}$라 쓰자. 정리~\ref{thm:main}에 의해 $\mathcal R$은 $\kerZ$을 생성하므로, 부호 조건에서 모든 $u\in\kerZ$에 대해 $\Z/2$에서 $\sum_I u_Is_I=0$이다. 따라서 $\varphi(\AM u)=\sum_I u_Is_I$는 $\Lambda=\AM(\Z^{\bs})$ 위의 준동형사상 $\varphi:\Lambda\to\Z/2$로 잘 정의된다. $V^0\subseteq\Z^{\bs}$를 좌표합이 $0$인 벡터들의 집합, $\Lambda^0=\AM(V^0)$이라 하자. 명제~\ref{prop:dsum}의 증명 3단계에서처럼, $\Lambda^0$은 벡터 $e_a-e_b$들로 이루어진 $\Z$\nobreakdash-기저를 가진다. 여기서 $\{a,b\}$는, 어떤 $W$에 대해 $W+a,W+b\in\bs$일 때 $a\sim b$로 정한 $[n]$ 위의 그래프의 spanning forest $F$의 변을 지난다. $F$의 모든 변 $\{a,b\}$에 대해 $\sigma_a-\sigma_b=\varphi(e_a-e_b)$인 $\sigma\in(\Z/2)^n$을 고르자(각 나무의 한 꼭짓점에서 $\sigma$를 정하고 나무를 따라 전파한다). 그러면 모든 $y\in\Lambda^0$에 대해 $\varphi(y)=\sum_i\sigma_iy_i$이다. $J_0\in\bs$를 고정하고 $\tau=\varphi(\ind_{J_0})-\sum_{i\in J_0}\sigma_i$로 두자. $w=\AM u\in\Lambda$이고 $m=\sum_Iu_I$이면 $w-m\ind_{J_0}=\AM(u-me_{J_0})\in\Lambda^0$이므로 $\varphi(w)=\sum_i\sigma_iw_i+m\tau$이다. $w=\ind_I$로 두면 $s_I=\tau+\sum_{i\in I}\sigma_i$, 즉 $\epsilon_I=(-1)^{\tau}\prod_{i\in I}(-1)^{\sigma_i}$를 얻는다. 이제 $D=\operatorname{diag}\big((-1)^{\sigma_i}e^{x_i}\big)$로 두면 모든 $I\in\bs$에 대해
+\emph{(a)의 충분성.} $s_I\in\Z/2$로 $\epsilon_I=(-1)^{s_I}$라 쓰자. $\mathcal R$은 $\kerZ$의 $\Z$\nobreakdash-기저이므로, 부호 조건에서 모든 $u\in\kerZ$에 대해 $\Z/2$에서 $\sum_I u_Is_I=0$이다. 따라서 $\varphi(\AM u)=\sum_I u_Is_I$는 $\Lambda=\AM(\Z^{\bs})$ 위의 준동형사상 $\varphi:\Lambda\to\Z/2$로 잘 정의된다. $V^0\subseteq\Z^{\bs}$를 좌표합이 $0$인 벡터들의 집합, $\Lambda^0=\AM(V^0)$이라 하자. 명제~\ref{prop:dsum}의 증명 3단계에서처럼, $\Lambda^0$은 벡터 $e_a-e_b$들로 이루어진 $\Z$\nobreakdash-기저를 가진다. 여기서 $\{a,b\}$는 $F$의 변 전체에 걸치고, $F$는 어떤 $W$에 대해 $W+a,W+b\in\bs$일 때 $a\sim b$로 정한 $[n]$ 위의 그래프의 spanning forest이다. $F$의 모든 변 $\{a,b\}$에 대해 $\sigma_a-\sigma_b=\varphi(e_a-e_b)$인 $\sigma\in(\Z/2)^n$을 고르자(각 나무의 한 꼭짓점에서 $\sigma$를 정하고 나무를 따라 전파한다). 그러면 모든 $y\in\Lambda^0$에 대해 $\varphi(y)=\sum_i\sigma_iy_i$이다. $J_0\in\bs$를 고정하고 $\tau=\varphi(\ind_{J_0})-\sum_{i\in J_0}\sigma_i$로 두자. $w=\AM u\in\Lambda$이고 $m=\sum_Iu_I$이면 $w-m\ind_{J_0}=\AM(u-me_{J_0})\in\Lambda^0$이므로 $\varphi(w)=\sum_i\sigma_iw_i+m\tau$이다. $w=\ind_I$로 두면 $s_I=\tau+\sum_{i\in I}\sigma_i$, 즉 $\epsilon_I=(-1)^{\tau}\prod_{i\in I}(-1)^{\sigma_i}$를 얻는다. 이제 $D=\operatorname{diag}\big((-1)^{\sigma_i}e^{x_i}\big)$로 두면 모든 $I\in\bs$에 대해
 \[
 p_I(QD)=p_I(Q)\prod_{i\in I}(-1)^{\sigma_i}e^{x_i}=(-1)^{\tau}\epsilon_I\,|p_I(Q')|\,\frac{p_I(Q)}{|p_I(Q)|}=(-1)^{\tau}p_I(Q')
 \]
 이고, $I\notin\bs$이면 양변이 모두 $0$이다. 앞에서와 같이 $\det G=(-1)^{\tau}$인 어떤 $G\in GL(k,\R)$에 대해 $Q'=GQD$이다.
 \end{proof}
 
-즉 (b)에서 부호가 상수라는 조건을 제외하면, $N$개의 Plücker 비 전체에 대한 조건이 정사각형 기저를 이루는 $N-\rank\AM$개의 정사각형에서의 조건으로 줄어든다. $M$이 연결이면 $D$는 (a)에서는 $0$이 아닌 상수배를 제외하면, (b)에서는 양의 상수배를 제외하면 유일하다. 절댓값은 $\rank\AM=n$이므로(보조정리~\ref{lem:lat}) 공통 인자를 제외하면 정해지고, 부호는 위 그래프에서 임의의 두 원소 $a,b$에 대해 $a\sim b$이므로(보조정리~\ref{lem:lat}의 증명) $\sigma_a-\sigma_b=s_{W+a}-s_{W+b}$로 강제되어 공통 부호를 제외하면 정해진다.
+따라서 (b)에서 부호가 상수라는 조건을 제외하면, $N$개의 Plücker 비 전체에 대한 조건이 정사각형 기저를 이루는 $N-\rank\AM$개의 정사각형에서의 조건으로 줄어든다. $M$이 연결이면 $D$는 (a)에서는 $0$이 아닌 상수배를 제외하면, (b)에서는 양의 상수배를 제외하면 유일하다. 절댓값은 $\rank\AM=n$이므로(보조정리~\ref{lem:lat}) 공통 인자를 제외하면 정해지고, 부호는 위 그래프에서 임의의 두 원소 $a,b$에 대해 $a\sim b$이므로(보조정리~\ref{lem:lat}의 증명) $\sigma_a-\sigma_b=s_{W+a}-s_{W+b}$로 강제되어 공통 부호를 제외하면 정해진다.
 
 \begin{remark}\label{rem:index}
-(b)는 $\mathcal R$이 $\kerR$을 생성한다는 사실만 쓰지만, (a)는 $\mathcal R$이 $\kerZ$을 생성한다는 사실을 쓴다. 부호 조건은 $\{\pm1\}\cong\Z/2$에 값을 갖기 때문이다. 정사각형으로 이루어진 $\kerR$의 $\R$\nobreakdash-기저는 진부분격자를 생성할 수 있다. 예를 들어 $U_{2,5}$에서 다섯 정사각형 $z_{1,2;\{3\},\{4\}}$, $z_{1,3;\{2\},\{5\}}$, $z_{1,4;\{3\},\{5\}}$, $z_{1,5;\{2\},\{4\}}$, $z_{2,3;\{4\},\{5\}}$는 일차독립이고 $\rank\ker_\Z A_{U_{2,5}}=10-5=5$이지만, 이들은 지표가 $2$인 부분격자를 생성한다.
+(b)는 $\mathcal R$이 $\kerR$을 생성한다는 사실만 쓰지만, (a)는 $\mathcal R$이 $\kerZ$을 생성한다는 사실을 쓴다. 부호 조건은 $\{\pm1\}\cong\Z/2$에 값을 갖기 때문이다. 정사각형으로 이루어진 $\kerR$의 $\R$\nobreakdash-기저는 진부분격자를 생성할 수 있다. 예를 들어 $U_{2,5}$에서 다섯 정사각형 $z_{1,2;\{3\},\{4\}}$, $z_{1,3;\{2\},\{5\}}$, $z_{1,4;\{3\},\{5\}}$, $z_{1,5;\{2\},\{4\}}$, $z_{2,3;\{4\},\{5\}}$는 일차독립이고 $\rank\ker_\Z A_{U_{2,5}}=10-5=5$이지만, 이들은 지수가 $2$인 부분격자를 생성한다.
 \end{remark}
 
 %====================================================================
@@ -440,14 +440,14 @@ $L=\sq(M)$, $u\in\kerZ$이라 하자. 정리~\ref{thm:sat}과 보조정리~\ref{
 \end{proof}
 
 \begin{remark}[White 추측]\label{rem:white}
-정리~\ref{thm:main}과 따름정리~\ref{cor:toric}은 격자 $\kerZ$, 즉 모든 변수를 가역으로 만든 뒤의 아이디얼 $I_M$에 관한 것이다. White 추측은 $S$ 자체에서 $J_M=I_M$인지를 묻는 훨씬 강한 진술이며, 일반적으로는 거짓이다~\cite{Lar26}.
+정리~\ref{thm:main}과 따름정리~\ref{cor:toric}은 격자 $\kerZ$, 즉 모든 변수를 가역으로 만든 뒤의 아이디얼 $I_M$에 관한 것이다. White 추측은 $S$ 자체에서 $J_M=I_M$인지를 묻는다. 이는 격자가 아니라 아이디얼에 관한 진술이며, 일반적으로는 거짓이다~\cite{Lar26}.
 \end{remark}
 
 \medskip\noindent\textbf{열린 문제.}
 \begin{enumerate}[label=(\arabic*),itemsep=2pt]
 \item 명제~\ref{prop:uniform}를 일반화하는 정준적인 정사각형 기저, 예를 들어 기저 교환 그래프나 $[n]$ 위의 전순서로 결정되는 정사각형 기저가 있는가?
-\item 어떤 매트로이드에서 $(f_z:z\in\mathcal R):\mathfrak m^\infty=I_M$인 정사각형 기저 $\mathcal R$이 존재하는가? $\mathfrak m$\nobreakdash-포화는 $p$\nobreakdash-포화보다 세밀하므로, 이는 따름정리~\ref{cor:toric}을 정리~\ref{thm:sat} 쪽으로 강화한다.
-\item 독립성 오라클이 주어졌을 때 정사각형 기저를 출력하는 다항 시간 알고리즘이 있는가?
+\item 어떤 매트로이드에서 $(f_z:z\in\mathcal R):\mathfrak m^\infty=I_M$인 정사각형 기저 $\mathcal R$이 존재하는가? $\mathfrak m$\nobreakdash-포화는 $p$\nobreakdash-포화보다 세밀하므로, 이는 따름정리~\ref{cor:toric}을 정리~\ref{thm:sat} 쪽으로 강화하게 된다.
+\item 독립성 오라클이 주어졌을 때 $n$과 $N$에 대한 다항 시간 안에 정사각형 기저를 출력하는 알고리즘이 있는가?
 \end{enumerate}
 
 \begin{thebibliography}{99}
@@ -456,11 +456,12 @@ $L=\sq(M)$, $u\in\kerZ$이라 하자. 정리~\ref{thm:sat}과 보조정리~\ref{
 \bibitem{Bl08} J. Blasiak, \emph{The toric ideal of a graphic matroid is generated by quadrics}, Combinatorica 28 (2008), 283--297.
 \bibitem{Sc11} J. Schweig, \emph{Toric ideals of lattice path matroids and polymatroids}, J. Pure Appl. Algebra 215 (2011), 2660--2665.
 \bibitem{Bo13} J. Bonin, \emph{Basis-exchange properties of sparse paving matroids}, Adv. in Appl. Math. 50 (2013), 6--15.
+\bibitem{YY25} Y.-C. Yu and C. H. Yuen, \emph{White's conjecture for paving matroids}, arXiv:2510.04163.
 \bibitem{LM14} M. Lasoń and M. Micha\lstroke{}ek, \emph{On the toric ideal of a matroid}, Adv. Math. 259 (2014), 1--12.
 \bibitem{La21} M. Lasoń, \emph{On the toric ideals of matroids of a fixed rank}, Selecta Math. (N.S.) 27 (2021), Paper No.~18.
 \bibitem{HMW25} K. Han, M. Micha\lstroke{}ek, and J. Weigert, \emph{White's conjecture for matroids and inner projections}, arXiv:2501.17738.
-\bibitem{HHKS20} K. Hayase, T. Hibi, K. Katsuno, and K. Shibata, \emph{Gröbner bases of toric ideals associated with matroids}, arXiv:2001.11835.
-\bibitem{BMS24} K. Bérczi, B. Mátravölgyi, and T. Schwarcz, \emph{Reconfiguration of basis pairs in regular matroids}, Proceedings of the 56th Annual ACM Symposium on Theory of Computing (STOC 2024), 1653--1664.
+\bibitem{HHKS20} K. Hayase, T. Hibi, K. Katsuno, and K. Shibata, \emph{Gröbner bases of toric ideals associated with matroids}, Acta Math. Vietnam. 47 (2022), 775--779.
+\bibitem{BMS24} K. Bérczi, B. Mátravölgyi, and T. Schwarcz, \emph{Reconfiguration of basis pairs in regular matroids}, J. Combin. Theory Ser. B 177 (2026), 105--142.
 \bibitem{BS24} K. Bérczi and T. Schwarcz, \emph{Exchange distance of basis pairs in split matroids}, SIAM J. Discrete Math. 38 (2024), no. 1, 132--147.
 \bibitem{Lar26} M. Larson, \emph{Counterexamples to two conjectures about matroids}, arXiv:2607.02208.
 \bibitem{BCLLM26} S. Backman, N. Cheung, M. Lasoń, G. Liu, and M. Micha\lstroke{}ek, \emph{The Gröbner version of White's conjecture is false}, arXiv:2606.13960.
