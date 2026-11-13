@@ -102,7 +102,7 @@ The rank condition is necessary: if $\rank M=0$, then $\kerZ=\Z$ but there are n
 \octa{\fill[blue!20] (L)--(K)--(R)--(F)--cycle;}{\draw[blue!70!black,very thick] (L)--(F)--(R); \draw[blue!70!black,very thick,dashed] (R)--(K)--(L);}{$z_1=e_{13}-e_{14}+e_{24}-e_{23}$}\hfill
 \octa{\fill[red!18] (T)--(K)--(D)--(F)--cycle;}{\draw[red!70!black,very thick] (T)--(F)--(D); \draw[red!70!black,very thick,dashed] (D)--(K)--(T);}{$z_2=e_{12}-e_{14}+e_{34}-e_{23}$}\hfill
 \octa{\fill[green!20] (T)--(R)--(D)--(L)--cycle;}{\draw[green!40!black,very thick] (T)--(R)--(D)--(L)--cycle;}{$z_3=e_{12}-e_{13}+e_{34}-e_{24}$}
-\caption{The base polytope of $U_{2,4}$ is an octahedron whose vertices are the six bases $I\subset[4]$, $|I|=2$; antipodal vertices are complementary sets. Its three equatorial squares are the three square relations (signs alternate around each square). Here $\rank\kerZ=6-4=2$ and $z_1=z_2-z_3$, so any two of the three squares form a $\Z$-basis of $\kerZ$.}
+\caption{The base polytope of $U_{2,4}$ is an octahedron whose vertices are the six bases $I\subset[4]$, $|I|=2$; antipodal vertices are complementary sets. Up to sign, its three equatorial squares are exactly the square relations (signs alternate around each square). Here $\rank\kerZ=6-4=2$ and $z_1=z_2-z_3$, so any two of the three squares form a $\Z$-basis of $\kerZ$.}
 \label{fig:u24}
 \end{figure}
 
@@ -113,7 +113,7 @@ The rank condition is necessary: if $\rank M=0$, then $\kerZ=\Z$ but there are n
 \[
 I_M\,K[y^{\pm1}]=(f_1,\dots,f_c)\,K[y^{\pm1}],\qquad I_M=(f_1,\dots,f_c):\Big(\prod_{I\in\bs}y_I\Big)^{\infty}
 \]
-over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, $c$ is the least possible number of generators. Geometrically, the part of the toric variety of $M$ that lies in the torus $(K^\times)^{\bs}$ is a complete intersection of $c$ symmetric exchange quadrics.
+over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, neither equation can hold with fewer than $c$ generators. Geometrically, the part of the toric variety of $M$ that lies in the torus $(K^\times)^{\bs}$ is a complete intersection of $c$ symmetric exchange quadrics.
 \item \emph{Local certificates.} Let $\Theta$ be any abelian group, for instance $\Z/2$ or $\R$. If a function $\chi:\bs\to\Theta$ satisfies the square condition $\chi(B+i)-\chi(B+j)-\chi(B'+i)+\chi(B'+j)=0$ for the $c$ squares of a square basis, then $\sum_I u_I\chi(I)=0$ for every $u\in\kerZ$, because $u\mapsto\sum_Iu_I\chi(I)$ is a homomorphism vanishing on a generating set. For a torsion group such as $\Z/2$, an $\R$-basis of squares does not suffice for this in general, since it may generate a proper sublattice of finite index (Remark~\ref{rem:index}), and a generating set of squares that is not a basis has more than $c$ elements. The cases $\Theta=\Z/2$ and $\Theta=\R$ together give a criterion for two real matrices to differ by an invertible row transformation and an invertible column scaling (\S\ref{sec:criterion}).
 \end{enumerate}
 
@@ -130,7 +130,7 @@ over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, $c$ i
 \node[box,right=1.0cm of phi] (H) {The graph $H$ on the bases of $M/v$\\ is connected\\ \footnotesize Proposition~\ref{prop:phi} (duality)};
 \node[box,below=0.9cm of H] (lift) {Exact sequence and spanning tree:\\ lift a square basis from $M\setminus v$ to $M$\\ \footnotesize Theorems~\ref{thm:exact} and \ref{thm:tree}};
 \node[box,below=0.9cm of phi] (tutte) {Tutte: $M\setminus v$ or $M/v$ is connected;\\ $M$ has a square basis iff $M^*$ does\\ \footnotesize Tutte's theorem, Lemma~\ref{lem:dual}};
-\node[box,below=0.9cm of lift] (conn) {Every connected matroid\\ has a square basis\\ \footnotesize Theorem~\ref{thm:cond}};
+\node[box,below=0.9cm of lift] (conn) {Every connected matroid\\ of rank at least $1$ has\\ a square basis\\ \footnotesize Theorem~\ref{thm:cond}};
 \node[box,below=0.9cm of tutte] (dsum) {Direct sums preserve\\ square bases\\ \footnotesize Proposition~\ref{prop:dsum}};
 \node[key,minimum height=0.9cm] (main) at ($(dsum.south)!0.5!(conn.south)+(0,-1.15)$) {Square Basis Theorem~\ref{thm:main}};
 \draw[arr] (phi)--(H);
@@ -150,9 +150,9 @@ over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, $c$ i
 \section{Preliminaries}\label{sec:prelim}
 We use the matroid terminology of Oxley~\cite{Ox11}. For a set $I$ and an element $a$ we write $I+a=I\cup\{a\}$ and $I-a=I\setminus\{a\}$. Since every basis has size $k$, $\AM^{T}\ind_n=k\,\ind_{\bs}$; in particular every $u\in\kerZ$ has coordinate sum $0$ when $k\ge1$. Over a field $K$, the toric ideal $I_M\subseteq K[y_I:I\in\bs]$ is the kernel of $y_I\mapsto\prod_{i\in I}x_i$, and
 \[
-I_M=\big\langle y^{u^+}-y^{u^-}:u\in\kerZ\big\rangle,
+I_M=\big(y^{u^+}-y^{u^-}:u\in\kerZ\big),
 \]
-where $u=u^+-u^-$ with $u^\pm\in\N^{\bs}$ of disjoint supports~\cite{St96}. The Krull dimension of $K[y_I:I\in\bs]/I_M$ is $\rank\AM$, so $I_M$ has height $N-\rank\AM$.
+where $u=u^+-u^-$ with $u^\pm\in\N^{\bs}$ of disjoint supports and $y^w=\prod_Iy_I^{w_I}$~\cite{St96}. The Krull dimension of $K[y_I:I\in\bs]/I_M$ is $\rank\AM$, so $I_M$ has height $N-\rank\AM$.
 
 \begin{definition}\label{def:square}
 For distinct $i,j\in[n]$ and distinct $(k-1)$-subsets $B,B'$ with $i,j\notin B\cup B'$ such that $B+i,B+j,B'+i,B'+j$ are bases, the vector $z_{i,j;B,B'}=e_{B+i}-e_{B+j}-e_{B'+i}+e_{B'+j}\in\Z^{\bs}$ is a \emph{square relation}, or \emph{square}. We write $\sq(M)$ for the sublattice of $\Z^{\bs}$ generated by the squares, and we say that $M$ \emph{has a square basis} if $\kerZ$ has a $\Z$-basis consisting of squares.
@@ -181,12 +181,12 @@ Given a square, put $B_1=B+i$, $B_2=B'+j$, $a=i$, $b=j$. Then $B_1-a+b=B+j$ and 
 If $1\le k\le n-1$, then $e_I\mapsto e_{[n]\setminus I}$ induces an isomorphism $\kerZ\to\ker_\Z A_{M^*}$ that maps the square $z_{i,j;B,B'}$ to $-z_{i,j;C,C'}$, where $C=[n]\setminus(B+i+j)$ and $C'=[n]\setminus(B'+i+j)$. Hence $M$ has a square basis if and only if $M^*$ does.
 \end{lemma}
 \begin{proof}
-For $f\in\kerZ$ we have $\sum f=0$, and the condition of row $i$ for $M^*$ is $\sum_{I\not\ni i}f(I)=\sum f-(\AM f)_i=0$. The converse is the same argument applied to $M^{*}$, using $M^{**}=M$. For squares, $[n]\setminus(B+i)=C+j$, $[n]\setminus(B+j)=C+i$, and similarly for $B'$.
+For $f\in\kerZ$ we have $\sum f=0$, and the condition from row $i$ of $A_{M^*}$ is $\sum_{I\not\ni i}f(I)=\sum f-(\AM f)_i=0$. The converse is the same argument applied to $M^{*}$, using $M^{**}=M$. For squares, $[n]\setminus(B+i)=C+j$, $[n]\setminus(B+j)=C+i$, and similarly for $B'$.
 \end{proof}
 
 %====================================================================
 \section{Direct sums}\label{sec:dsum}
-Let $M=M_1\oplus M_2$ with ground sets $E_1,E_2$. The bases of $M$ are the sets $I_1\sqcup I_2$ with $I_t\in\bs_t=\bs(M_t)$, so $\Z^{\bs}=V_1\otimes V_2$ with $V_t=\Z^{\bs_t}$. Write $N_t=|\bs_t|$, $\rho_t=\rank A_{M_t}$, $K_t=\ker_\Z A_{M_t}$, $k_t=\rank M_t$, and let $V_t^0\subseteq V_t$ be the vectors with coordinate sum $0$.
+Let $M=M_1\oplus M_2$ with ground sets $E_1,E_2$. The bases of $M$ are the sets $I_1\sqcup I_2$ with $I_t\in\bs_t=\bs(M_t)$, so $\Z^{\bs}=V_1\otimes V_2$ with $V_t=\Z^{\bs_t}$. Write $N_t=|\bs_t|$, $\rho_t=\rank A_{M_t}$, $K_t=\ker_\Z A_{M_t}$, $k_t=\rank M_t$, and let $V_t^0\subseteq V_t$ be the sublattice of vectors with coordinate sum $0$.
 
 \begin{proposition}\label{prop:dsum}
 If $k_1,k_2\ge1$ and $M_1,M_2$ have square bases $\mathcal R_1,\mathcal R_2$, then $M_1\oplus M_2$ has a square basis.
@@ -204,7 +204,7 @@ and $K_t\subseteq V_t^0$ because $k_t\ge1$.
 \]
 The first two summands carry the kernels of the two factors, and the third consists of the interaction terms. Each summand lies in $\kerZ$ by Step 1; note that $V_1^0\otimes V_2^0$ is exactly the set of $f$ with $\operatorname{row}(f)=0$ and $\operatorname{col}(f)=0$. For $f\in\kerZ$ put $f'=f-\operatorname{row}(f)\otimes e_{I_2^0}-e_{I_1^0}\otimes\operatorname{col}(f)$; since $\sum\operatorname{row}(f)=\sum\operatorname{col}(f)=0$, we get $\operatorname{row}(f')=\operatorname{col}(f')=0$. Applying $\operatorname{row}$ and $\operatorname{col}$ shows that the sum is direct.
 
-\emph{Step 3 (a basis of $V_1^0/K_1$).} The lattice $\Lambda_1=A_{M_1}(V_1^0)$ is generated by the vectors $\ind_J-\ind_{J'}$ with $J,J'\in\bs_1$. Since the basis exchange graph is connected~\cite{Br69}, adjacent pairs suffice, and for $J=D+a$, $J'=D+b$ we get $e_a-e_b$. Let $G_1$ be the graph on $E_1$ with $a\sim b$ if $D+a,D+b\in\bs_1$ for some $D$, and let $F_1$ be a spanning forest of $G_1$. The vectors $e_a-e_b$, $\{a,b\}\in F_1$, form a $\Z$-basis of $\Lambda_1$. Since $A_{M_1}(V_1)=\Lambda_1+\Z\ind_{J_0}$ and $\ind_{J_0}$ has coordinate sum $k_1\neq0$, we have $|F_1|=\rank\Lambda_1=\rho_1-1$. For each edge $\{a,b\}\in F_1$ choose $D_{ab}$ with $D_{ab}+a,D_{ab}+b\in\bs_1$ and put $u_{ab}=e_{D_{ab}+a}-e_{D_{ab}+b}\in V_1^0$. Then $A_{M_1}u_{ab}=e_a-e_b$, and since $K_1=\ker A_{M_1}\cap V_1^0$, the classes $\overline{u_{ab}}$ form a $\Z$-basis of $V_1^0/K_1\cong\Lambda_1$.
+\emph{Step 3 (a basis of $V_1^0/K_1$).} The lattice $\Lambda_1=A_{M_1}(V_1^0)$ is generated by the vectors $\ind_J-\ind_{J'}$ with $J,J'\in\bs_1$. Since the basis exchange graph is connected~\cite{Br69}, adjacent pairs suffice, and for $J=D+a$, $J'=D+b$ we get $e_a-e_b$. Let $G_1$ be the graph on $E_1$ with $a\sim b$ if $D+a,D+b\in\bs_1$ for some $D$, and let $F_1$ be a spanning forest of $G_1$. The vectors $e_a-e_b$, $\{a,b\}\in F_1$, form a $\Z$-basis of $\Lambda_1$. Since $A_{M_1}(V_1)=\Lambda_1+\Z\ind_{J_0}$ for any $J_0\in\bs_1$ and $\ind_{J_0}$ has coordinate sum $k_1\neq0$, we have $|F_1|=\rank\Lambda_1=\rho_1-1$. For each edge $\{a,b\}\in F_1$ choose $D_{ab}$ with $D_{ab}+a,D_{ab}+b\in\bs_1$ and put $u_{ab}=e_{D_{ab}+a}-e_{D_{ab}+b}\in V_1^0$. Then $A_{M_1}u_{ab}=e_a-e_b$, and since $A_{M_1}$ induces an isomorphism $V_1^0/K_1\cong\Lambda_1$, the classes $\overline{u_{ab}}$ form a $\Z$-basis of $V_1^0/K_1$.
 
 \emph{Step 4 (the basis).} The subgroup $K_1\otimes V_2=K_1\otimes e_{I_2^0}\oplus K_1\otimes V_2^0$ of $\kerZ$ has free quotient
 \[
@@ -216,7 +216,7 @@ Using the basis $\{e_I-e_{I_2^0}\}_{I\ne I_2^0}$ of $V_2^0$, we obtain the follo
 \item $e_{I_1^0}\otimes s$ for $s\in\mathcal R_2$;
 \item $u_{ab}\otimes(e_I-e_{I_2^0})$ for $\{a,b\}\in F_1$, $I\in\bs_2\setminus\{I_2^0\}$.
 \end{enumerate}
-Their number is $N_1N_2-\rho_1-\rho_2+1=N_1N_2-\rank\AM$, since $\AM f=(A_{M_1}\operatorname{row}f,\,A_{M_2}\operatorname{col}f)$ and the pairs $(\operatorname{row}f,\operatorname{col}f)$, as $f$ ranges over $\Z^{\bs}$, are exactly the pairs with equal coordinate sums.
+Their number is $N_1N_2-\rho_1-\rho_2+1=N_1N_2-\rank\AM$, since $\AM f=(A_{M_1}\operatorname{row}(f),\,A_{M_2}\operatorname{col}(f))$ and the pairs $(\operatorname{row}(f),\operatorname{col}(f))$, as $f$ ranges over $\Z^{\bs}$, are exactly the pairs with equal coordinate sums.
 
 \emph{Step 5 (all are squares).} If $w=z_{i,j;D,D'}$, then $w\otimes e_I=z_{i,j;D\sqcup I,\,D'\sqcup I}$; family (2) is analogous. For (3), take $B=D_{ab}\sqcup I$, $B'=D_{ab}\sqcup I_2^0$, $i=a$, $j=b$: the four sets $(D_{ab}+a)\sqcup I$, $(D_{ab}+b)\sqcup I$, $(D_{ab}+a)\sqcup I_2^0$, $(D_{ab}+b)\sqcup I_2^0$ are bases, $a,b\notin B\cup B'$, $B\ne B'$, and the square is $u_{ab}\otimes(e_I-e_{I_2^0})$.
 \end{proof}
@@ -240,16 +240,16 @@ If $M$ and $M_{\mathrm d}$ are connected, then the sequence
 is exact, where $\pi$ restricts $f$ to the bases containing $v$ (identified with $\bs(M_{\mathrm c})$ via $J+v\leftrightarrow J$).
 \end{theorem}
 \begin{proof}
-Write $f=(h,g)$ with $h$ on the bases avoiding $v$ and $g$ on those containing $v$. Then $f\in\kerZ$ if and only if $A_{M_{\mathrm d}}h+A_{M_{\mathrm c}}g=0$ (rows in $X$) and $\sum g=0$ (row $v$). Thus $\ker\pi=\ker_\Z A_{M_{\mathrm d}}$ and $\operatorname{im}\pi\subseteq\Gamma$. Conversely, if $\sum g=0$, then $A_{M_{\mathrm c}}g$ has coordinate sum $(k-1)\sum g=0$, so $A_{M_{\mathrm c}}g\in\Lambda(M_{\mathrm d})$ by Lemma~\ref{lem:lat}, and there is an integer $h$ with $A_{M_{\mathrm d}}h=-A_{M_{\mathrm c}}g$.
+Write $f=(h,g)$ with $h$ on the bases avoiding $v$ and $g$ on those containing $v$. Then $f\in\kerZ$ if and only if $A_{M_{\mathrm d}}h+A_{M_{\mathrm c}}g=0$ (rows in $X$) and $\sum g=0$ (row $v$). Thus $\ker\pi=\ker_\Z A_{M_{\mathrm d}}$ and $\operatorname{im}\pi\subseteq\Gamma$. Conversely, if $\sum g=0$, then $A_{M_{\mathrm c}}g$ has coordinate sum $(k-1)\sum g=0$, so $A_{M_{\mathrm c}}g\in\Lambda(M_{\mathrm d})$ by Lemma~\ref{lem:lat}, and there is an integer vector $h$ with $A_{M_{\mathrm d}}h=-A_{M_{\mathrm c}}g$.
 \end{proof}
 
 Let $H=H(M,v)$ be the graph on $\bs(M_{\mathrm c})$ in which distinct $J,J'$ are adjacent if $J+j$ and $J'+j$ are bases of $M_{\mathrm d}$ for some $j\in X\setminus(J\cup J')$.
 
 \begin{theorem}[Lifting along a spanning tree]\label{thm:tree}
-Assume $M$ and $M_{\mathrm d}$ are connected, $H$ is connected, and $M_{\mathrm d}$ has a square basis $\mathcal R_1$. For each edge $\{J,J'\}$ of a spanning tree $\mathcal T$ of $H$, with a fixed order of $J$ and $J'$, choose $j$ as above and put $z_{J,J'}=z_{v,j;J,J'}=e_{J+v}-e_{J+j}-e_{J'+v}+e_{J'+j}$. Then $\mathcal R_1\cup\{z_{J,J'}:\{J,J'\}\in\mathcal T\}$ is a square basis of $\kerZ$.
+Assume $M$ and $M_{\mathrm d}$ are connected, $H$ is connected, and $M_{\mathrm d}$ has a square basis $\mathcal R_1$. For each edge $\{J,J'\}$ of a spanning tree $\mathcal T$ of $H$, with its endpoints $J,J'$ taken in a fixed order, choose $j$ as above and put $z_{J,J'}=z_{v,j;J,J'}=e_{J+v}-e_{J+j}-e_{J'+v}+e_{J'+j}$. Then $\mathcal R_1\cup\{z_{J,J'}:\{J,J'\}\in\mathcal T\}$ is a square basis of $\kerZ$.
 \end{theorem}
 \begin{proof}
-Each $z_{J,J'}$ is a square of $M$, and $\pi(z_{J,J'})=e_J-e_{J'}$. The edge vectors of a spanning tree of a connected graph form a $\Z$-basis of the sum-zero lattice on its vertices (remove leaves one at a time). Hence for $f\in\kerZ$ there are unique integers $\kappa_e$ with $\pi(f)=\sum_e\kappa_e\pi(z_e)$, and $f-\sum_e\kappa_ez_e\in\ker\pi=\langle\mathcal R_1\rangle$. Linear independence follows by applying $\pi$ and then using the independence of $\mathcal R_1$. Squares of $M_{\mathrm d}$ are squares of $M$.
+Each $z_{J,J'}$ is a square of $M$, and $\pi(z_{J,J'})=e_J-e_{J'}$. The edge vectors of a spanning tree of a connected graph form a $\Z$-basis of the sum-zero lattice on its vertices (remove leaves one at a time). Hence, writing $z_e=z_{J,J'}$ for an edge $e=\{J,J'\}$ of $\mathcal T$, for each $f\in\kerZ$ there are unique integers $\kappa_e$ with $\pi(f)=\sum_e\kappa_e\pi(z_e)$, and $f-\sum_e\kappa_ez_e\in\ker\pi=\langle\mathcal R_1\rangle$. Linear independence follows by applying $\pi$ and then using the independence of $\mathcal R_1$. Squares of $M_{\mathrm d}$ are squares of $M$.
 \end{proof}
 
 \begin{proposition}\label{prop:phi}
@@ -260,7 +260,7 @@ For $J\in\bs(M_{\mathrm c})$ and $j\in X\setminus J$, the set $J+j$ is a basis i
 \end{proof}
 
 \begin{theorem}[Circuits through an element]\label{thm:phi}
-Let $P$ be a connected matroid with at least two elements and let $v\in E(P)$. If $P/v$ is connected, then the graph on $E(P)-v$ in which $x\sim y$ whenever some circuit of $P$ contains $v$, $x$ and $y$ is connected. Equivalently, if $M$ and $M\setminus v$ are connected, then $\Phi$ is connected.
+Let $P$ be a connected matroid with at least two elements and let $v\in E(P)$. If $P/v$ is connected, then the graph on $E(P)-v$, in which $x\sim y$ whenever some circuit of $P$ contains $v$, $x$ and $y$, is connected. Equivalently, if $M$ and $M\setminus v$ are connected, then $\Phi$ is connected.
 \end{theorem}
 The equivalence of the two forms comes from $P=M^*$: cocircuits of $M$ are circuits of $P$, and $M\setminus v$ is connected if and only if $P/v$ is. The proof is in \S\ref{sec:phiproof}.
 
@@ -307,7 +307,7 @@ If $A=\{a\}$, then $r(A)=1$ and $\lambda\le1+r(B)-r(X)\le1$; so $|A|\ge2$, and l
 
 \emph{Step 1: $A$ and $B$ are independent.} Let $e\in A$. If $e$ is parallel to $v$, then $v$ is a loop of $P/e$, so $P/e$ is disconnected. Otherwise $e\notin\cl(B)$ by Lemma~\ref{lem:A}, so $\lambda(P/e)=\lambda$ by (2), and minimality forces $P/e$ to be disconnected. By Tutte's theorem, $P\setminus e$ is connected, so by (3) and minimality $e$ must be a coloop of $P|A$. Hence $A$ is independent, and so is $B$.
 
-\emph{Step 2: a contradiction.} Since $A$ is independent, at most one element of $A$ is parallel to $v$, and $|A|\ge2$; choose $e\in A$ not parallel to $v$. By Step 1, $P/e$ is disconnected; let $W$ be its component containing $v$ and $R=E(P)\setminus(W+e)\ne\varnothing$. For $y\in R$ take a circuit $C$ of $P$ through $v$ and $y$. If $e\in C$, then $C-e$ is a circuit of $P/e$ containing $v$ and $y$; if $e\notin\cl(C)$, then $C$ is a circuit of $P/e$; in both cases $y\in W$, a contradiction. Hence $e\in\cl(C)\setminus C$. If $C-v\subseteq B$, then $e\in\cl(B)$ by Lemma~\ref{lem:phi1}, and $e$ is parallel to $v$ by Lemma~\ref{lem:A}, which is excluded. Therefore $C-v\subseteq A$, so $R\subseteq A-e$. As $A$ is independent, $r_{P/e}(R)=|R|$, so $P/e=(P/e)|W\oplus(P/e)|R$ gives $r_{P/e}(W)=r(P/e)-|R|$. Since $e$ is not a loop, $r(W+e)=r_{P/e}(W)+1$ and $r(P/e)=r(P)-1$; as $W+e=E(P)\setminus R$, we get $r(E(P)\setminus R)=r(P)-|R|$. Since deleting one element lowers the rank by at most one, every element $x$ of $R$ is a coloop of $P$ (delete $x$ first; the remaining $|R|-1$ deletions lower the rank by at most $|R|-1$), contradicting the connectivity of $P$.
+\emph{Step 2: a contradiction.} Since $A$ is independent, at most one element of $A$ is parallel to $v$, and $|A|\ge2$; choose $e\in A$ not parallel to $v$. By Step 1, $P/e$ is disconnected; let $W$ be its component containing $v$, and let $R=E(P)\setminus(W+e)$, which is nonempty. For $y\in R$ take a circuit $C$ of $P$ through $v$ and $y$. If $e\in C$, then $C-e$ is a circuit of $P/e$ containing $v$ and $y$; if $e\notin\cl(C)$, then $C$ is a circuit of $P/e$; in both cases $y\in W$, a contradiction. Hence $e\in\cl(C)\setminus C$. If $C-v\subseteq B$, then $e\in\cl(B)$ by Lemma~\ref{lem:phi1}, and $e$ is parallel to $v$ by Lemma~\ref{lem:A}, which is excluded. Therefore $C-v\subseteq A$, so $R\subseteq A-e$. As $A$ is independent, $r_{P/e}(R)=|R|$, so $P/e=(P/e)|W\oplus(P/e)|R$ gives $r_{P/e}(W)=r(P/e)-|R|$. Since $e$ is not a loop, $r(W+e)=r_{P/e}(W)+1$ and $r(P/e)=r(P)-1$; as $W+e=E(P)\setminus R$, we get $r(E(P)\setminus R)=r(P)-|R|$. Since deleting one element lowers the rank by at most one, every element $x$ of $R$ is a coloop of $P$ (delete $x$ first; the remaining $|R|-1$ deletions lower the rank by at most $|R|-1$), contradicting the connectivity of $P$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:phi}]
@@ -315,29 +315,29 @@ Suppose the graph is disconnected and let $A,B$ be as in Setup (S). By Propositi
 \end{proof}
 
 \begin{remark}[Relation to Lehman's theorem]\label{rem:lehman}
-Theorem~\ref{thm:phi} can also be derived from Lehman's theorem~\cite{Le64} (see~\cite[Theorem~4.3.3]{Ox11}): in a connected matroid $P$, the circuits avoiding $v$ are exactly the minimal sets of the form $(C_1\cup C_2)-\bigcap\{C: v\in C\subseteq C_1\cup C_2\}$, where $C_1\ne C_2$ are circuits through $v$. Indeed, recall that the circuits of $P/v$ are the minimal nonempty sets of the form $C-v$ with $C$ a circuit of $P$. In Setup (S), a circuit $D$ of $P/v$ meeting both $A$ and $B$ is not of the form $C-v$ with $v\in C$, so $D$ is a circuit of $P$ avoiding $v$. Moreover $v\notin\cl(D)$: otherwise $D+v$ contains a circuit $C\ni v$, and $C-v\subsetneq D$ because $D$ itself is a circuit, contradicting the minimality of $D$. Write $D$ as above. If $C_1-v$ and $C_2-v$ lie on the same side, then so does $D$. Otherwise every circuit through $v$ contained in $C_1\cup C_2$ equals $C_1$ or $C_2$, so the intersection is $\{v\}$ and $D\supseteq C_1-v$, whence $v\in\cl(D)$, a contradiction. Hence no circuit of $P/v$ meets both sides, and $P/v$ is disconnected. We have kept the self-contained proof above, which uses only circuit elimination and submodularity and gives in addition the rank identity $\lambda=1$ of Proposition~\ref{prop:Q}.
+Theorem~\ref{thm:phi} can also be derived from Lehman's theorem~\cite{Le64} (see~\cite[Section~4.3]{Ox11}): in a connected matroid $P$, the circuits avoiding $v$ are exactly the minimal sets of the form $(C_1\cup C_2)-\bigcap\{C: v\in C\subseteq C_1\cup C_2\}$, where $C_1\ne C_2$ are circuits through $v$. Indeed, recall that the circuits of $P/v$ are the minimal nonempty sets of the form $C-v$ with $C$ a circuit of $P$. In Setup (S), a circuit $D$ of $P/v$ meeting both $A$ and $B$ is not of the form $C-v$ with $v\in C$, so $D$ is a circuit of $P$ avoiding $v$. Moreover $v\notin\cl(D)$: otherwise $D+v$ contains a circuit $C\ni v$, and $C-v\subsetneq D$ because $D$ itself is a circuit, contradicting the minimality of $D$. Write $D$ as above. If $C_1-v$ and $C_2-v$ lie on the same side, then so does $D$. Otherwise every circuit through $v$ contained in $C_1\cup C_2$ equals $C_1$ or $C_2$, so the intersection is $\{v\}$ and $D\supseteq C_1-v$, whence $v\in\cl(D)$, a contradiction. Hence no circuit of $P/v$ meets both sides, and $P/v$ is disconnected. We have kept the self-contained proof above, which uses only circuit elimination, submodularity and Tutte's theorem, and gives in addition the rank identity $\lambda=1$ of Proposition~\ref{prop:Q}.
 \end{remark}
 
 %====================================================================
 \section{Uniform matroids}\label{sec:uniform}
-For uniform matroids, the construction in the proof of Theorem~\ref{thm:main} can be replaced by an explicit square basis that involves no choices. We order $k$-subsets of $[n]$ by the colex order: $X\colex Y$ if $\max(X\triangle Y)\in Y$. The same order is used for $(k-1)$-subsets; the smallest $(k-1)$-subset avoiding $j$ is $[k]-j$ if $j\le k-1$ and $[k-1]$ if $j\ge k$.
+For uniform matroids, the construction in the proof of Theorem~\ref{thm:main} can be replaced by an explicit square basis that involves no choices. We order the $k$-subsets of $[n]$ by the colex order: $X\colex Y$ if $\max(X\triangle Y)\in Y$. The same order is used for $(k-1)$-subsets; the smallest $(k-1)$-subset avoiding $j$ is $[k]-j$ if $j\le k-1$ and $[k-1]$ if $j\ge k$.
 
 \begin{lemma}[Unitriangularity]\label{lem:unitri}
-Let $S$ be a set of $N-\rank\AM$ bases, and suppose that for each $s\in S$ there is a square $r_s$ whose $s$-coordinate is $\pm1$ and whose support meets $S$ only in elements that are colex-$\le s$. Then $\{r_s:s\in S\}$ is a $\Z$-basis of $\kerZ$.
+Let $S$ be a set of $N-\rank\AM$ bases, and suppose that for each $s\in S$ there is a square $r_s$ whose $s$-coordinate is $\pm1$ and whose support contains no element of $S$ that is colex-larger than $s$. Then $\{r_s:s\in S\}$ is a $\Z$-basis of $\kerZ$.
 \end{lemma}
 \begin{proof}
 Let $\pi:\kerZ\to\Z^S$ be the projection. The vectors $\pi(r_s)$, listed in colex order, form a triangular matrix with diagonal entries $\pm1$, so $\pi(L)=\Z^S$ for $L=\langle r_s\rangle$. Since $\kerZ$ has rank $|S|$ and $\pi$ is onto, $\ker\pi$ has rank $0$ and is therefore trivial. For $x\in\kerZ$ choose $l\in L$ with $\pi(l)=\pi(x)$; then $x=l$. Hence $L=\kerZ$, and the $|S|$ generators form a basis.
 \end{proof}
 
 \begin{proposition}\label{prop:uniform}
-For $1\le k\le n-1$, $\rank A_{U_{k,n}}=n$, and the following squares form a $\Z$-basis of $\ker_\Z A_{U_{k,n}}$. Let
+For $1\le k\le n-1$, $\rank A_{U_{k,n}}=n$, and the squares $r_s$ ($s\in S$) defined below form a $\Z$-basis of $\ker_\Z A_{U_{k,n}}$. Let
 \[
 T=\{[k]\}\cup\{[k-1]+i:k<i\le n\}\cup\{([k]-j)+(k+1):1\le j\le k-1\},
 \]
-a set of $n$ $k$-subsets, and let $S$ be its complement. For $s\in S$ put $i=\max s$, $B=s-i$ and $W_s=[i-1]\setminus B$. If $W_s$ contains an element $\ge k$, let $j$ be the least such element and $B'=[k-1]$; otherwise let $j=\min W_s$ and $B'=[k]-j$. Then $r_s=z_{i,j;B,B'}$.
+a set of $n$ subsets of size $k$, and let $S$ be its complement. For $s\in S$ put $i=\max s$, $B=s-i$ and $W_s=[i-1]\setminus B$. If $W_s$ contains an element $\ge k$, let $j$ be the least such element and $B'=[k-1]$; otherwise let $j=\min W_s$ and $B'=[k]-j$. Put $r_s=z_{i,j;B,B'}$.
 \end{proposition}
 \begin{proof}
-The diagonal entries of $\AM\AM^{T}$ are $\binom{n-1}{k-1}$ and the off-diagonal entries are $\binom{n-2}{k-2}$, so its eigenvalues $\binom{n-2}{k-1}$ (on $\ind_n^{\perp}$) and $\binom{n-1}{k-1}+(n-1)\binom{n-2}{k-2}$ are positive and $\rank\AM=n$. The three parts of $T$ are disjoint, so $|S|=N-n$.
+Write $M=U_{k,n}$. The diagonal entries of $\AM\AM^{T}$ are $\binom{n-1}{k-1}$ and the off-diagonal entries are $\binom{n-2}{k-2}$, so its eigenvalues $\binom{n-2}{k-1}$ (on $\ind_n^{\perp}$) and $\binom{n-1}{k-1}+(n-1)\binom{n-2}{k-2}$ are positive and $\rank\AM=n$. The three parts of $T$ are disjoint, so $|S|=N-n$.
 
 Let $s\in S$. Since $s\ne[k]$, we have $i>k$ and $|W_s|=i-k\ge1$. In the first case, $B\ne[k-1]$ because $[k-1]+i\in T$, so $B'\colex B$ and $j\notin B'$. In the second case, if $B=B'=[k]-j$, then $W_s=\{j\}\cup\{k+1,\dots,i-1\}\subseteq[k-1]$ forces $i=k+1$ and $s\in T$; so $B\ne B'$, and $B'\colex B$ because $B'$ is the smallest $(k-1)$-set avoiding $j$. In both cases $j<i$, $j\notin B\cup B'$, $B'\colex B$, and therefore $\max B'\le\max B<i$, so $i\notin B'$. All $k$-sets are bases, so $r_s=e_{B+i}-e_{B+j}-e_{B'+i}+e_{B'+j}$ is a square. Since $B'+i\colex B+i$ and $B+j,B'+j\colex B+i$ (their maxima are below $i$), the colex-largest element of the support is $s=B+i$, with coefficient $+1$. Lemma~\ref{lem:unitri} completes the proof.
 \end{proof}
@@ -350,7 +350,7 @@ For $U_{2,4}$ we get $T=\{12,13,14,23\}$ and $S=\{24,34\}$, with $r_{24}=e_{24}-
 %====================================================================
 \section{Consequences}\label{sec:apps}
 \subsection{Toric ideals}
-Let $K$ be a field, $S=K[y_I:I\in\bs]$, $p=\prod_{I\in\bs}y_I$, and $\mathcal Y=S[p^{-1}]=K[y_I^{\pm1}]$. For $z\in\Z^{\bs}$ put $f_z=y^{z^+}-y^{z^-}$; for a square, $f_z$ is a symmetric exchange binomial by Lemma~\ref{lem:sym}.
+Let $K$ be a field, $K[y]=K[y_I:I\in\bs]$, $p=\prod_{I\in\bs}y_I$, and $\mathcal Y=K[y][p^{-1}]=K[y^{\pm1}]$. For $z\in\Z^{\bs}$ put $f_z=y^{z^+}-y^{z^-}$; for a square, $f_z$ is a symmetric exchange binomial by Lemma~\ref{lem:sym}.
 
 \begin{corollary}\label{cor:toric}
 Let $M$ be a matroid of rank at least $1$ and $c=N-\rank\AM=\operatorname{ht}I_M$. For a set $\mathcal R$ of $c$ squares, the following are equivalent:
@@ -364,21 +364,21 @@ In particular, by Theorem~\ref{thm:main} such a set $\mathcal R$ exists, so $I_M
 \begin{proof}
 In $\mathcal Y$ we have $f_z=y^{z^-}(y^z-1)$, so $(f_z:z\in\mathcal R)\mathcal Y=(y^z-1:z\in\mathcal R)\mathcal Y$. Since $y^{v+w}-1=y^v(y^w-1)+(y^v-1)$ and $y^{-v}-1=-y^{-v}(y^v-1)$, this ideal equals $\mathfrak a_L=(y^u-1:u\in L)\mathcal Y$ for the lattice $L=\langle\mathcal R\rangle$, and likewise $I_M\mathcal Y=\mathfrak a_{\kerZ}$. The map $y^w\mapsto[w]$ induces an isomorphism $\mathcal Y/\mathfrak a_L\cong K[\Z^{\bs}/L]$ onto the group algebra, under which $y^u-1$ maps to $[u]-[0]$; as distinct group elements are linearly independent, $y^u-1\in\mathfrak a_L$ if and only if $u\in L$. Hence (b) holds if and only if $L=\kerZ$, and since $|\mathcal R|=c=\rank\kerZ$, this is equivalent to (a).
 
-For any ideal $J\subseteq S$ we have $J\mathcal Y\cap S=J:p^{\infty}$ (this is standard; see~\cite{ES96}). The toric ideal is prime and contains no monomial, so $I_M:p^\infty=I_M$. Hence (b) implies (c). Conversely, if (c) holds, then $(f_z)\mathcal Y=((f_z):p^\infty)\mathcal Y=I_M\mathcal Y$, which is (b).
+For any ideal $J\subseteq K[y]$ we have $J\mathcal Y\cap K[y]=J:p^{\infty}$ (this is standard; see~\cite{ES96}). The toric ideal is prime and contains no monomial, so $I_M:p^\infty=I_M$. Hence (b) implies (c). Conversely, if (c) holds, then $(f_z)\mathcal Y=((f_z):p^\infty)\mathcal Y=I_M\mathcal Y$, which is (b).
 
-Finally, let $J\subseteq S$ be any ideal with $J:p^\infty=I_M$. Then $J\mathcal Y=I_M\mathcal Y$ as above. This is a prime of height $c$, since localization preserves the height of a prime not meeting the multiplicative set. By Krull's height theorem a prime minimal over an ideal with fewer than $c$ generators has height less than $c$, so $J\mathcal Y$, and hence $J$, needs at least $c$ generators.
+Finally, let $J\subseteq K[y]$ be any ideal with $J:p^\infty=I_M$. Then $J\mathcal Y=I_M\mathcal Y$ as above. This is a prime of height $c$, since localization preserves the height of a prime not meeting the multiplicative set. By Krull's height theorem a prime minimal over an ideal with fewer than $c$ generators has height less than $c$, so $J\mathcal Y$, and hence $J$, needs at least $c$ generators.
 \end{proof}
 
 \begin{remark}
-The \LM{} theorem gives $I_M=J_M:\mathfrak m^\infty\subseteq J_M:p^\infty\subseteq I_M$, where $J_M$ is generated by all symmetric exchange binomials, so all of them together generate $I_M$ up to $p$-saturation. Corollary~\ref{cor:toric} shows that $c$ of them suffice, the least possible number.
+The \LM{} theorem gives $I_M=J_M:\mathfrak m^\infty\subseteq J_M:p^\infty\subseteq I_M$, where $J_M$ is generated by all symmetric exchange binomials and $\mathfrak m=(y_I:I\in\bs)$; thus $J_M:p^\infty=I_M$. Corollary~\ref{cor:toric} shows that $c$ of them suffice, the least possible number.
 \end{remark}
 
 \begin{remark}[Lattice bases and Markov bases]\label{rem:markov}
-In algebraic statistics, a finite subset of $\kerZ$ is a \emph{Markov basis} if the corresponding binomials generate $I_M$, and a \emph{lattice basis} if it is a $\Z$-basis of $\kerZ$~\cite{DS98}. A Markov basis always generates $\kerZ$ as a group, but a lattice basis is in general not a Markov basis~\cite{DS98}. The ideal generated by the binomials of a lattice basis is a \emph{lattice basis ideal}; its $p$-saturation is the lattice ideal~\cite{ES96}, and its primary decomposition has been studied by Ho\c{s}ten and Shapiro~\cite{HS00}. In these terms, White's conjecture asserts that the squares form a Markov basis, which fails in general~\cite{Lar26}; Theorem~\ref{thm:main} asserts that the squares always contain a lattice basis, and Corollary~\ref{cor:toric} is the corresponding statement about lattice basis ideals.
+In algebraic statistics, a finite subset of $\kerZ$ is a \emph{Markov basis} if the corresponding binomials generate $I_M$, and a \emph{lattice basis} if it is a $\Z$-basis of $\kerZ$~\cite{DS98}. A Markov basis always generates $\kerZ$ as a group, but a lattice basis is in general not a Markov basis~\cite{DS98}. The ideal generated by the binomials of a lattice basis is a \emph{lattice basis ideal}; its $p$-saturation is the lattice ideal~\cite{ES96}, and its primary decomposition has been studied by Ho\c{s}ten and Shapiro~\cite{HS00}. In these terms, White's conjecture asserts that the squares form a Markov basis, which fails in general~\cite{Lar26}; Theorem~\ref{thm:main} asserts that, for rank at least $1$, the squares always contain a lattice basis, and Corollary~\ref{cor:toric} is the corresponding statement about lattice basis ideals.
 \end{remark}
 
 \subsection{Invertible column scaling}\label{sec:criterion}
-The action of the column torus on Pl\"ucker coordinates is classical~\cite{GGMS87,DW91}; row and column scaling together with the matroid toric ideal appear in the setting of slack realization spaces~\cite{BW19}. The following criterion is an application within this framework, and it is the place where the integrality in Theorem~\ref{thm:main} is used. For real $k\times n$ matrices $Q,Q'$ of rank $k$ we ask whether $Q'=GQD$ for some $G\in GL(k,\R)$ and some invertible diagonal matrix $D$ (respectively, some diagonal matrix $D$ with positive entries). For a $k$-subset $I$ let $p_I(Q)=\det Q_I$ and $\bs(Q)=\{I:p_I(Q)\ne0\}$. For $D=\operatorname{diag}(\mu_1,\dots,\mu_n)$,
+The action of the column torus on Pl\"ucker coordinates is classical~\cite{GGMS87,DW91}; row and column scaling together with the matroid toric ideal appear in the setting of slack realization spaces~\cite{BW19}. The following criterion is an application within this framework, and it is where the integrality in Theorem~\ref{thm:main} is used. For real $k\times n$ matrices $Q,Q'$ of rank $k$ we ask whether $Q'=GQD$ for some $G\in GL(k,\R)$ and some invertible diagonal matrix $D$ (respectively, some diagonal matrix $D$ with positive entries). For a $k$-subset $I$ let $Q_I$ be the $k\times k$ submatrix of $Q$ with columns in $I$, and put $p_I(Q)=\det Q_I$ and $\bs(Q)=\{I:p_I(Q)\ne0\}$. For $D=\operatorname{diag}(\mu_1,\dots,\mu_n)$,
 \begin{equation}\label{eq:plucker}
 p_I(GQD)=\det(G)\Big(\prod_{i\in I}\mu_i\Big)p_I(Q).
 \end{equation}
@@ -406,14 +406,14 @@ If $D$ is positive, then $\epsilon_I=\sgn\det G$ is constant.
 
 \emph{Sufficiency in (b).} Put $D=\operatorname{diag}(e^{x_i})$. Then $p(Q')=\epsilon\,p(QD)$ as Pl\"ucker vectors, where $\epsilon$ is the common sign. By injectivity of the Pl\"ucker embedding, $Q'$ and $QD$ have the same row space, so $Q'=GQD$ for some $G\in GL(k,\R)$, and $\det G=\epsilon$.
 
-\emph{Sufficiency in (a).} Write $\epsilon_I=(-1)^{s_I}$ with $s_I\in\Z/2$. Since $\mathcal R$ is a $\Z$-basis of $\kerZ$, the sign condition gives $\sum_I u_Is_I=0$ in $\Z/2$ for every $u\in\kerZ$, so $\varphi(\AM u)=\sum_I u_Is_I$ is a well-defined homomorphism $\varphi:\Lambda\to\Z/2$ on $\Lambda=\AM(\Z^{\bs})$. Let $V^0\subseteq\Z^{\bs}$ be the vectors with coordinate sum $0$ and $\Lambda^0=\AM(V^0)$. As in Step~3 of the proof of Proposition~\ref{prop:dsum}, $\Lambda^0$ has a $\Z$-basis consisting of the vectors $e_a-e_b$, where $\{a,b\}$ runs over the edges of a spanning forest $F$ of the graph on $[n]$ in which $a\sim b$ if $W+a,W+b\in\bs$ for some $W$. Choose $\sigma\in(\Z/2)^n$ with $\sigma_a-\sigma_b=\varphi(e_a-e_b)$ for every edge $\{a,b\}$ of $F$ (fix $\sigma$ at one vertex of each tree and propagate along the tree); then $\varphi(y)=\sum_i\sigma_iy_i$ for all $y\in\Lambda^0$. Fix $J_0\in\bs$ and put $\tau=\varphi(\ind_{J_0})-\sum_{i\in J_0}\sigma_i$. If $w=\AM u\in\Lambda$ and $m=\sum_Iu_I$, then $w-m\ind_{J_0}=\AM(u-me_{J_0})\in\Lambda^0$, so $\varphi(w)=\sum_i\sigma_iw_i+m\tau$. For $w=\ind_I$ this gives $s_I=\tau+\sum_{i\in I}\sigma_i$, that is, $\epsilon_I=(-1)^{\tau}\prod_{i\in I}(-1)^{\sigma_i}$. Now put $D=\operatorname{diag}\big((-1)^{\sigma_i}e^{x_i}\big)$. Then
+\emph{Sufficiency in (a).} Write $\epsilon_I=(-1)^{s_I}$ with $s_I\in\Z/2$. Since $\mathcal R$ is a $\Z$-basis of $\kerZ$, the sign condition gives $\sum_I u_Is_I=0$ in $\Z/2$ for every $u\in\kerZ$, so $\varphi(\AM u)=\sum_I u_Is_I$ is a well-defined homomorphism $\varphi:\Lambda\to\Z/2$ on $\Lambda=\AM(\Z^{\bs})$. Let $V^0\subseteq\Z^{\bs}$ be the sublattice of vectors with coordinate sum $0$ and $\Lambda^0=\AM(V^0)$. As in Step~3 of the proof of Proposition~\ref{prop:dsum}, $\Lambda^0$ has a $\Z$-basis consisting of the vectors $e_a-e_b$, where $\{a,b\}$ runs over the edges of a spanning forest $F$ of the graph on $[n]$ in which $a\sim b$ if $W+a,W+b\in\bs$ for some $W$. Choose $\sigma\in(\Z/2)^n$ with $\sigma_a-\sigma_b=\varphi(e_a-e_b)$ for every edge $\{a,b\}$ of $F$ (fix $\sigma$ at one vertex of each tree and propagate along the tree); then $\varphi(t)=\sum_i\sigma_it_i$ for all $t\in\Lambda^0$. Fix $J_0\in\bs$ and put $\tau=\varphi(\ind_{J_0})-\sum_{i\in J_0}\sigma_i$. If $w=\AM u\in\Lambda$ and $m=\sum_Iu_I$, then $w-m\ind_{J_0}=\AM(u-me_{J_0})\in\Lambda^0$, so $\varphi(w)=\sum_i\sigma_iw_i+m\tau$. For $w=\ind_I$ this gives $s_I=\tau+\sum_{i\in I}\sigma_i$, that is, $\epsilon_I=(-1)^{\tau}\prod_{i\in I}(-1)^{\sigma_i}$. Now put $D=\operatorname{diag}\big((-1)^{\sigma_i}e^{x_i}\big)$. Then
 \[
 p_I(QD)=p_I(Q)\prod_{i\in I}(-1)^{\sigma_i}e^{x_i}=(-1)^{\tau}\epsilon_I\,|p_I(Q')|\,\frac{p_I(Q)}{|p_I(Q)|}=(-1)^{\tau}p_I(Q')
 \]
 for all $I\in\bs$, and both sides vanish for $I\notin\bs$. As before, $Q'=GQD$ for some $G\in GL(k,\R)$ with $\det G=(-1)^{\tau}$.
 \end{proof}
 
-Thus, apart from the constancy of the sign in (b), the conditions on all $N$ Pl\"ucker ratios reduce to conditions at the $N-\rank\AM$ squares of a square basis. If $M$ is connected, then $D$ is unique up to a nonzero scalar factor in (a), and up to a positive scalar factor in (b): its absolute values are determined up to a common factor because $\rank\AM=n$ (Lemma~\ref{lem:lat}), and its signs are determined up to a common sign because any two elements $a,b$ satisfy $a\sim b$ in the graph above (proof of Lemma~\ref{lem:lat}), so that $\sigma_a-\sigma_b=s_{W+a}-s_{W+b}$ is forced.
+Thus, apart from the constancy of the sign in (b), the conditions on all $N$ Pl\"ucker ratios reduce to one condition for each of the $N-\rank\AM$ squares of a square basis. If $M$ is connected, then $D$ is unique up to a nonzero scalar factor in (a), and up to a positive scalar factor in (b): its absolute values are determined up to a common factor because $\rank\AM=n$ (Lemma~\ref{lem:lat}), and its signs are determined up to a common sign because any two elements $a,b$ satisfy $a\sim b$ in the graph above (proof of Lemma~\ref{lem:lat}), so that $\sigma_a-\sigma_b=s_{W+a}-s_{W+b}$ is forced.
 
 \begin{remark}\label{rem:index}
 Part (b) uses only that $\mathcal R$ spans $\kerR$, but part (a) uses that $\mathcal R$ generates $\kerZ$: the sign condition takes values in $\{\pm1\}\cong\Z/2$. An $\R$-basis of $\kerR$ consisting of squares can generate a proper sublattice. For example, for $U_{2,5}$ the five squares $z_{1,2;\{3\},\{4\}}$, $z_{1,3;\{2\},\{5\}}$, $z_{1,4;\{3\},\{5\}}$, $z_{1,5;\{2\},\{4\}}$, $z_{2,3;\{4\},\{5\}}$ are linearly independent, and $\rank\ker_\Z A_{U_{2,5}}=10-5=5$, but they generate a sublattice of index $2$.
@@ -433,7 +433,7 @@ Let $L=\sq(M)$ and $u\in\kerZ$. By Theorem~\ref{thm:sat} and Lemma~\ref{lem:sym}
 \end{proof}
 
 \begin{remark}[White's conjecture]\label{rem:white}
-Theorem~\ref{thm:main} and Corollary~\ref{cor:toric} concern the lattice $\kerZ$, equivalently the ideal $I_M$ after inverting all variables. White's conjecture asks whether $J_M=I_M$ in $S$ itself; this is a statement about the ideal rather than the lattice, and it is false in general~\cite{Lar26}.
+Theorem~\ref{thm:main} and Corollary~\ref{cor:toric} concern the lattice $\kerZ$, equivalently the ideal $I_M$ after inverting all variables. White's conjecture asks whether $J_M=I_M$ in $K[y]$ itself; this is a statement about the ideal rather than the lattice, and it is false in general~\cite{Lar26}.
 \end{remark}
 
 \medskip\noindent\textbf{Open problems.}
