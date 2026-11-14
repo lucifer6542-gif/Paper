@@ -163,7 +163,7 @@ I_M=\big(y^{u^+}-y^{u^-}:u\in\kerZ\big)
 \begin{definition}\label{def:square}
 서로 다른 $i,j\in[n]$과, $i$와 $j$를 포함하지 않는 서로 다른 $(k-1)$\nobreakdash-부분집합 $B,B'$을 생각하자. $B+i,B+j,B'+i,B'+j$가 모두 기저이면 벡터 $z_{i,j;B,B'}=e_{B+i}-e_{B+j}-e_{B'+i}+e_{B'+j}\in\Z^{\bs}$를 \emph{정사각형 관계} 또는 간단히 \emph{정사각형}이라 한다. 정사각형들이 생성하는 $\Z^{\bs}$의 부분격자를 $\sq(M)$이라 쓰고, $\kerZ$이 정사각형들로 이루어진 $\Z$\nobreakdash-기저를 가지면 $M$이 \emph{정사각형 기저를 가진다}고 한다.
 \end{definition}
-네 지시벡터가 $\ind_{B+i}-\ind_{B+j}-\ind_{B'+i}+\ind_{B'+j}=0$을 만족하므로 항상 $\sq(M)\subseteq\kerZ$이다. \emph{대칭 교환}은 기저 $B_1,B_2$와 원소 $a\in B_1\setminus B_2$, $b\in B_2\setminus B_1$로서 $B_1-a+b$와 $B_2-b+a$가 모두 기저인 것을 말하며, 그 이항식은 $y_{B_1}y_{B_2}-y_{B_1-a+b}\,y_{B_2-b+a}$이다.
+네 지시벡터가 $\ind_{B+i}-\ind_{B+j}-\ind_{B'+i}+\ind_{B'+j}=0$을 만족하므로 항상 $\sq(M)\subseteq\kerZ$이다. \emph{대칭 교환}은 기저 $B_1,B_2$와 원소 $a\in B_1\setminus B_2$, $b\in B_2\setminus B_1$로서 $B_1-a+b$와 $B_2-b+a$가 모두 기저인 것을 말하며, 그 이항식은 $y_{B_1}y_{B_2}-y_{B_1-a+b}\,y_{B_2-b+a}$이다. 대칭 교환 정리~\cite{Br69}에 의해, 서로 다른 기저 $B_1,B_2$와 임의의 $a\in B_1\setminus B_2$에 대해 이러한 $b$가 항상 존재한다.
 
 \begin{lemma}\label{lem:sym}
 정사각형은 $0$이 아닌 대칭 교환 이항식의 지수벡터와 정확히 일치한다.
@@ -210,7 +210,7 @@ $k_1,k_2\ge1$이고 $M_1,M_2$가 정사각형 기저 $\mathcal R_1,\mathcal R_2$
 \]
 이다. 앞의 두 성분은 두 인자의 핵을 담고, 세 번째 성분은 상호작용 항들로 이루어진다. 1단계에 의해 각 성분은 $\kerZ$에 속한다. 여기서 $V_1^0\otimes V_2^0$은 정확히 $\operatorname{row}(f)=0$, $\operatorname{col}(f)=0$인 $f$들의 집합이다. $f\in\kerZ$에 대해 $f'=f-\operatorname{row}(f)\otimes e_{I_2^0}-e_{I_1^0}\otimes\operatorname{col}(f)$로 두면, $\sum\operatorname{row}(f)=\sum\operatorname{col}(f)=0$이므로 $\operatorname{row}(f')=\operatorname{col}(f')=0$이다. $\operatorname{row}$와 $\operatorname{col}$을 적용하면 합이 직합임을 알 수 있다.
 
-\emph{3단계($V_1^0/K_1$의 기저).} 격자 $\Lambda_1=A_{M_1}(V_1^0)$은 $J,J'\in\bs_1$에 대한 벡터 $\ind_J-\ind_{J'}$들로 생성된다. 기저 교환 그래프가 연결이므로~\cite{Br69} 인접한 쌍만으로 충분하고, $J=D+a$, $J'=D+b$이면 $e_a-e_b$를 얻는다. 어떤 $D$에 대해 $D+a,D+b\in\bs_1$일 때 $a\sim b$로 정한 $E_1$ 위의 그래프를 $G_1$이라 하고, $F_1$을 $G_1$의 spanning forest라 하자. 벡터 $e_a-e_b$ ($\{a,b\}\in F_1$)들은 $\Lambda_1$의 $\Z$\nobreakdash-기저를 이룬다. 임의의 $J_0\in\bs_1$에 대해 $A_{M_1}(V_1)=\Lambda_1+\Z\ind_{J_0}$이고 $\ind_{J_0}$의 좌표합은 $k_1\neq0$이므로 $|F_1|=\rank\Lambda_1=\rho_1-1$이다. 각 변 $\{a,b\}\in F_1$에 대해 $D_{ab}+a,D_{ab}+b\in\bs_1$인 $D_{ab}$를 고르고 $u_{ab}=e_{D_{ab}+a}-e_{D_{ab}+b}\in V_1^0$으로 둔다. 그러면 $A_{M_1}u_{ab}=e_a-e_b$이고, $A_{M_1}$이 동형사상 $V_1^0/K_1\cong\Lambda_1$을 유도하므로 잉여류(coset) $\overline{u_{ab}}$들은 $V_1^0/K_1$의 $\Z$\nobreakdash-기저를 이룬다.
+\emph{3단계($V_1^0/K_1$의 기저).} 격자 $\Lambda_1=A_{M_1}(V_1^0)$은 $J,J'\in\bs_1$에 대한 벡터 $\ind_J-\ind_{J'}$들로 생성된다. 기저 교환 공리에 의해 $M_1$의 임의의 두 기저는 이웃한 것끼리 원소 하나만 다른 기저들의 열로 이어지므로 인접한 쌍만으로 충분하고, $J=D+a$, $J'=D+b$이면 $e_a-e_b$를 얻는다. 어떤 $D$에 대해 $D+a,D+b\in\bs_1$일 때 $a\sim b$로 정한 $E_1$ 위의 그래프를 $G_1$이라 하고, $F_1$을 $G_1$의 spanning forest라 하자. 벡터 $e_a-e_b$ ($\{a,b\}\in F_1$)들은 $\Lambda_1$의 $\Z$\nobreakdash-기저를 이룬다. 임의의 $J_0\in\bs_1$에 대해 $A_{M_1}(V_1)=\Lambda_1+\Z\ind_{J_0}$이고 $\ind_{J_0}$의 좌표합은 $k_1\neq0$이므로 $|F_1|=\rank\Lambda_1=\rho_1-1$이다. 각 변 $\{a,b\}\in F_1$에 대해 $D_{ab}+a,D_{ab}+b\in\bs_1$인 $D_{ab}$를 고르고 $u_{ab}=e_{D_{ab}+a}-e_{D_{ab}+b}\in V_1^0$으로 둔다. 그러면 $A_{M_1}u_{ab}=e_a-e_b$이고, $A_{M_1}$이 동형사상 $V_1^0/K_1\cong\Lambda_1$을 유도하므로 잉여류(coset) $\overline{u_{ab}}$들은 $V_1^0/K_1$의 $\Z$\nobreakdash-기저를 이룬다.
 
 \emph{4단계(기저).} $\kerZ$의 부분군 $K_1\otimes V_2=K_1\otimes e_{I_2^0}\oplus K_1\otimes V_2^0$에 대한 몫
 \[
@@ -390,7 +390,7 @@ $J_M$을 모든 대칭 교환 이항식이 생성하는 아이디얼이라 하�
 \end{remark}
 
 \subsection{가역 열 스케일링}\label{sec:criterion}
-Plücker 좌표에 대한 열 토러스의 작용은 고전적이며~\cite{GGMS87,DW91}, 행 스케일링과 열 스케일링을 매트로이드 토릭 아이디얼과 함께 다루는 틀로는 slack realization space가 있다~\cite{BW19}. 아래 판정법은 이 틀에 속하는 응용이며, 정리~\ref{thm:main}의 정수성이 실제로 쓰이는 곳이기도 하다. 계수가 $k$인 $k\times n$ 실수 행렬 $Q,Q'$에 대해, 어떤 $G\in GL(k,\R)$과 가역 대각 행렬 $D$로 $Q'=GQD$가 되는지, 그리고 대각 성분이 양수인 대각 행렬 $D$로 그렇게 되는지를 묻는다. $k$\nobreakdash-부분집합 $I$에 대해 $Q_I$를 $I$에 속하는 열들로 이루어진 $Q$의 $k\times k$ 부분행렬이라 하고, $p_I(Q)=\det Q_I$, $\bs(Q)=\{I:p_I(Q)\ne0\}$으로 둔다. $D=\operatorname{diag}(\mu_1,\dots,\mu_n)$에 대해
+Plücker 좌표에 대한 열 토러스의 작용은 고전적이며~\cite{GGMS87,DW91}, 행 스케일링과 열 스케일링을 매트로이드에 연관된 토릭 아이디얼과 함께 다루는 틀로는 slack realization space가 있다~\cite{BW19}. 아래 판정법은 이 틀에 속하는 응용이며, 정리~\ref{thm:main}의 정수성이 실제로 쓰이는 곳이기도 하다. 계수가 $k$인 $k\times n$ 실수 행렬 $Q,Q'$에 대해, 어떤 $G\in GL(k,\R)$과 가역 대각 행렬 $D$로 $Q'=GQD$가 되는지, 그리고 대각 성분이 양수인 대각 행렬 $D$로 그렇게 되는지를 묻는다. $k$\nobreakdash-부분집합 $I$에 대해 $Q_I$를 $I$에 속하는 열들로 이루어진 $Q$의 $k\times k$ 부분행렬이라 하고, $p_I(Q)=\det Q_I$, $\bs(Q)=\{I:p_I(Q)\ne0\}$으로 둔다. $D=\operatorname{diag}(\mu_1,\dots,\mu_n)$에 대해
 \begin{equation}\label{eq:plucker}
 p_I(GQD)=\det(G)\Big(\prod_{i\in I}\mu_i\Big)p_I(Q)
 \end{equation}
