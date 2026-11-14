@@ -80,7 +80,7 @@ We call $z_{i,j;B,B'}$ a \emph{square relation}. The square relations are exactl
 For every matroid $M$ of rank at least $1$, the lattice $\kerZ$ has a $\Z$-basis consisting of $N-\rank\AM$ square relations.
 \end{theorem}
 
-The rank condition is necessary: if $\rank M=0$, then $\kerZ=\Z$ but there are no squares. Figure~\ref{fig:u24} shows the smallest nontrivial case.
+The rank condition is necessary: if $\rank M=0$, then $\kerZ=\Z$ but there are no squares. Figure~\ref{fig:u24} shows the smallest nontrivial uniform example.
 
 \begin{figure}[H]
 \centering
@@ -106,19 +106,19 @@ The rank condition is necessary: if $\rank M=0$, then $\kerZ=\Z$ but there are n
 \label{fig:u24}
 \end{figure}
 
-\medskip\noindent\textbf{Why a basis matters.} Theorem~\ref{thm:main} strengthens two known facts about matroids of rank at least $1$. Over $\R$, the squares span $\kerR$ (this follows, for instance, from Theorem~\ref{thm:sat} below), so some $N-\rank\AM$ squares form an $\R$-basis; but an $\R$-basis of a lattice need not generate it. Over $\Z$, the squares generate $\kerZ$, which follows from the \LM{} theorem~\cite{LM14} (Proposition~\ref{prop:lattice}); but a generating set of a free abelian group need not contain a basis ($\{2,3\}$ generates $\Z$). Theorem~\ref{thm:main} gives both properties at once: a set of squares that generates $\kerZ$ over $\Z$ and has the least possible size. This has the following consequences.
+\medskip\noindent\textbf{Why a basis matters.} Theorem~\ref{thm:main} strengthens two known facts about matroids of rank at least $1$. Over $\R$, the squares span $\kerR$, as also follows from Theorem~\ref{thm:sat} below, so some $N-\rank\AM$ squares form an $\R$-basis; but an $\R$-basis of a lattice need not generate it. Over $\Z$, the squares generate $\kerZ$, which follows from the \LM{} theorem~\cite{LM14} (Proposition~\ref{prop:lattice}); but a generating set of a free abelian group need not contain a basis (for example, $\{2,3\}$ generates $\Z$, but no subset of it is a basis of $\Z$). Theorem~\ref{thm:main} gives both properties at once: a set of squares that generates $\kerZ$ over $\Z$ and has the least possible size. This has the following consequences.
 
 \begin{enumerate}[label=(\roman*),leftmargin=2em,itemsep=2pt]
 \item \emph{Toric ideals.} Let $c=N-\rank\AM$, which is the codimension of $I_M$. Theorem~\ref{thm:main} is equivalent to the existence of $c$ symmetric exchange binomials $f_1,\dots,f_c$ with
 \[
 I_M\,K[y^{\pm1}]=(f_1,\dots,f_c)\,K[y^{\pm1}],\qquad I_M=(f_1,\dots,f_c):\Big(\prod_{I\in\bs}y_I\Big)^{\infty}
 \]
-over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, neither equation can hold with fewer than $c$ generators. Geometrically, the part of the toric variety of $M$ that lies in the torus $(K^\times)^{\bs}$ is a complete intersection of $c$ symmetric exchange quadrics.
+over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, neither equation can hold with fewer than $c$ generators. Geometrically, the part of the toric variety of $M$ that lies in the torus $(K^\times)^{\bs}$ is a complete intersection of $c$ symmetric exchange quadrics. By contrast, $I_M$ itself is rarely a complete intersection: if $M$ has no loops or coloops and $c\ge1$, this happens only for three matroids on four elements~\cite{GR15}.
 \item \emph{Local certificates.} Let $\Theta$ be any abelian group, for instance $\Z/2$ or $\R$. If a function $\chi:\bs\to\Theta$ satisfies the square condition $\chi(B+i)-\chi(B+j)-\chi(B'+i)+\chi(B'+j)=0$ for the $c$ squares of a square basis, then $\sum_I u_I\chi(I)=0$ for every $u\in\kerZ$, because $u\mapsto\sum_Iu_I\chi(I)$ is a homomorphism vanishing on a generating set. For a torsion group such as $\Z/2$, an $\R$-basis of squares does not suffice for this in general, since it may generate a proper sublattice of finite index (Remark~\ref{rem:index}), and a generating set of squares that is not a basis has more than $c$ elements. The cases $\Theta=\Z/2$ and $\Theta=\R$ together give a criterion for two real matrices to differ by an invertible row transformation and an invertible column scaling (\S\ref{sec:criterion}).
 \end{enumerate}
 
 
-\medskip\noindent\textbf{Outline of the proof.} The proof does not use the \LM{} theorem and is summarized in Figure~\ref{fig:map}. Direct sums reduce the problem to connected matroids (\S\ref{sec:dsum}). For a connected matroid $M$ and an element $v$ with $M\setminus v$ connected, an exact sequence $0\to\ker_\Z A_{M\setminus v}\to\kerZ\to\Gamma\to0$ allows us to lift a square basis of $M\setminus v$, provided that a certain graph on $[n]-v$ is connected (\S\ref{sec:conn}). This graph is connected exactly when the cocircuits of $M$ through $v$, that is, the circuits of $M^*$ through $v$, link all other elements. We prove that in a connected matroid $P$ the circuits through $v$ link all other elements whenever $P/v$ is connected; for $P=M^*$ this is exactly the case in which $M\setminus v$ is connected (Theorem~\ref{thm:phi}, \S\ref{sec:phiproof}). Tutte's theorem that $M\setminus v$ or $M/v$ is connected~\cite[Theorem~4.3.1]{Ox11} closes the induction. For uniform matroids an explicit basis is given in \S\ref{sec:uniform}.
+\medskip\noindent\textbf{Outline of the proof.} The proof does not use the \LM{} theorem; its structure is summarized in Figure~\ref{fig:map}. First, direct sums reduce the problem to connected matroids (\S\ref{sec:dsum}). Next, let $M$ be a connected matroid and $v$ an element with $M\setminus v$ connected. An exact sequence $0\to\ker_\Z A_{M\setminus v}\to\kerZ\to\Gamma\to0$ allows us to lift a square basis of $M\setminus v$ to $M$, provided that a certain graph on $[n]-v$ is connected (\S\ref{sec:conn}). This graph is connected exactly when the cocircuits of $M$ through $v$, that is, the circuits of $M^*$ through $v$, link all other elements (Proposition~\ref{prop:phi}). In \S\ref{sec:phiproof} we prove that in a connected matroid $P$ the circuits through $v$ link all other elements whenever $P/v$ is connected (Theorem~\ref{thm:phi}); for $P=M^*$, since $P/v=(M\setminus v)^*$, this hypothesis says exactly that $M\setminus v$ is connected. Finally, by Tutte's theorem~\cite[Section~4.3]{Ox11}, $M\setminus v$ or $M/v$ is connected; if $M/v$ is connected, then $M^*\setminus v=(M/v)^*$ is connected, and duality (Lemma~\ref{lem:dual}) reduces this case to the previous one applied to $M^*$. This completes the induction. For uniform matroids an explicit basis is given in \S\ref{sec:uniform}.
 
 \begin{figure}[H]
 \centering
@@ -148,11 +148,11 @@ over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, neith
 
 %====================================================================
 \section{Preliminaries}\label{sec:prelim}
-We use the matroid terminology of Oxley~\cite{Ox11}. For a set $I$ and an element $a$ we write $I+a=I\cup\{a\}$ and $I-a=I\setminus\{a\}$. Since every basis has size $k$, $\AM^{T}\ind_n=k\,\ind_{\bs}$; in particular every $u\in\kerZ$ has coordinate sum $0$ when $k\ge1$. Over a field $K$, the toric ideal $I_M\subseteq K[y_I:I\in\bs]$ is the kernel of $y_I\mapsto\prod_{i\in I}x_i$, and
+We use the matroid terminology of Oxley~\cite{Ox11}. For a set $I$ and an element $a$ we write $I+a=I\cup\{a\}$ and $I-a=I\setminus\{a\}$. Since every basis has size $k$, $\AM^{T}\ind_n=k\,\ind_{\bs}$; hence every $u\in\kerZ$ has coordinate sum $0$ when $k\ge1$. Over a field $K$, write $K[y]=K[y_I:I\in\bs]$. The toric ideal $I_M\subseteq K[y]$ is the kernel of the homomorphism $K[y]\to K[x_1,\dots,x_n]$, $y_I\mapsto\prod_{i\in I}x_i$, and by~\cite{St96}
 \[
 I_M=\big(y^{u^+}-y^{u^-}:u\in\kerZ\big),
 \]
-where $u=u^+-u^-$ with $u^\pm\in\N^{\bs}$ of disjoint supports and $y^w=\prod_Iy_I^{w_I}$~\cite{St96}. The Krull dimension of $K[y_I:I\in\bs]/I_M$ is $\rank\AM$, so $I_M$ has height $N-\rank\AM$.
+where $u=u^+-u^-$ with $u^\pm\in\N^{\bs}$ of disjoint supports and $y^w=\prod_Iy_I^{w_I}$. The Krull dimension of $K[y]/I_M$ is $\rank\AM$, so $I_M$ has height $N-\rank\AM$.
 
 \begin{definition}\label{def:square}
 For distinct $i,j\in[n]$ and distinct $(k-1)$-subsets $B,B'$ with $i,j\notin B\cup B'$ such that $B+i,B+j,B'+i,B'+j$ are bases, the vector $z_{i,j;B,B'}=e_{B+i}-e_{B+j}-e_{B'+i}+e_{B'+j}\in\Z^{\bs}$ is a \emph{square relation}, or \emph{square}. We write $\sq(M)$ for the sublattice of $\Z^{\bs}$ generated by the squares, and we say that $M$ \emph{has a square basis} if $\kerZ$ has a $\Z$-basis consisting of squares.
@@ -256,10 +256,10 @@ Each $z_{J,J'}$ is a square of $M$, and $\pi(z_{J,J'})=e_J-e_{J'}$. The edge vec
 Assume $M$ and $M_{\mathrm d}$ are connected, and let $\Phi$ be the graph on $X$ in which $j\sim j'$ if some cocircuit of $M$ contains $v$, $j$ and $j'$. Then $H$ is connected if and only if $\Phi$ is connected.
 \end{proposition}
 \begin{proof}
-For $J\in\bs(M_{\mathrm c})$ and $j\in X\setminus J$, the set $J+j$ is a basis if and only if $j\notin\cl(J)$. Since $J+v$ is a basis, $\cl(J)$ is a hyperplane avoiding $v$, and every hyperplane avoiding $v$ arises this way. Put $\mathcal N(J)=X\setminus\cl(J)$, the cocircuit $[n]\setminus\cl(J)$ with $v$ removed. It is nonempty because $X$ spans $M$, and every $j\in X$ lies in some $\mathcal N(J)$ because $v$ and $j$ lie in a common cocircuit of the connected matroid $M$. Moreover $J\sim J'$ in $H$ if and only if $\mathcal N(J)\cap\mathcal N(J')\ne\varnothing$, and $j\sim j'$ in $\Phi$ if and only if $j,j'\in\mathcal N(J)$ for some $J$. Let $\mathcal G_0$ be the bipartite graph on $\bs(M_{\mathrm c})\sqcup X$ with $J$ joined to $j$ when $j\in\mathcal N(J)$. It has no isolated vertices, so $\mathcal G_0$ is connected if and only if its $\bs(M_{\mathrm c})$-side is linked through paths of length two, that is, $H$ is connected; and likewise if and only if $\Phi$ is connected.
+For $J\in\bs(M_{\mathrm c})$ and $j\in X\setminus J$, the set $J+j$ is a basis if and only if $j\notin\cl(J)$. Since $J+v$ is a basis, $\cl(J)$ is a hyperplane avoiding $v$, and every hyperplane avoiding $v$ arises this way. Put $\mathcal N(J)=X\setminus\cl(J)$, the cocircuit $[n]\setminus\cl(J)$ with $v$ removed. It is nonempty because $X$ spans $M$, and every $j\in X$ lies in some $\mathcal N(J)$ because $v$ and $j$ lie in a common cocircuit of the connected matroid $M$. Moreover $J\sim J'$ in $H$ if and only if $\mathcal N(J)\cap\mathcal N(J')\ne\varnothing$, and $j\sim j'$ in $\Phi$ if and only if $j,j'\in\mathcal N(J)$ for some $J$. Let $\mathcal G_0$ be the bipartite graph on $\bs(M_{\mathrm c})\sqcup X$ with $J$ joined to $j$ when $j\in\mathcal N(J)$. It has no isolated vertices. Since a path in $\mathcal G_0$ alternates between the two sides, two vertices of $\bs(M_{\mathrm c})$ are joined in $\mathcal G_0$ exactly when they are joined in $H$; hence $\mathcal G_0$ is connected if and only if $H$ is connected, and likewise if and only if $\Phi$ is connected.
 \end{proof}
 
-\begin{theorem}[Circuits through an element]\label{thm:phi}
+\begin{theorem}[Circuits through a fixed element]\label{thm:phi}
 Let $P$ be a connected matroid with at least two elements and let $v\in E(P)$. If $P/v$ is connected, then the graph on $E(P)-v$, in which $x\sim y$ whenever some circuit of $P$ contains $v$, $x$ and $y$, is connected. Equivalently, if $M$ and $M\setminus v$ are connected, then $\Phi$ is connected.
 \end{theorem}
 The equivalence of the two forms comes from $P=M^*$: cocircuits of $M$ are circuits of $P$, and $M\setminus v$ is connected if and only if $P/v$ is. The proof is in \S\ref{sec:phiproof}.
@@ -268,7 +268,7 @@ The equivalence of the two forms comes from $P=M^*$: cocircuits of $M$ are circu
 Every connected matroid of rank at least $1$ has a square basis.
 \end{theorem}
 \begin{proof}
-Induction on $n$. If $n=1$, the matroid is a coloop and $\kerZ=0$. Let $n\ge2$ and $v\in[n]$. By Tutte's theorem~\cite[Theorem~4.3.1]{Ox11}, $M\setminus v$ or $M/v$ is connected. If $M\setminus v$ is connected, it has a square basis by induction, $\Phi$ is connected by Theorem~\ref{thm:phi}, $H$ is connected by Proposition~\ref{prop:phi}, and Theorem~\ref{thm:tree} applies (if $k=1$, then $\bs(M_{\mathrm c})=\{\varnothing\}$ and $\Gamma=0$). If $M/v$ is connected, then $M^*$ and $M^*\setminus v=(M/v)^*$ are connected, so $M^*$ has a square basis by the first case, and so does $M$ by Lemma~\ref{lem:dual}.
+Induction on $n$. If $n=1$, the matroid is a coloop and $\kerZ=0$. Let $n\ge2$ and $v\in[n]$. By Tutte's theorem~\cite[Section~4.3]{Ox11}, $M\setminus v$ or $M/v$ is connected. If $M\setminus v$ is connected, it has a square basis by induction, $\Phi$ is connected by Theorem~\ref{thm:phi}, $H$ is connected by Proposition~\ref{prop:phi}, and Theorem~\ref{thm:tree} applies (if $k=1$, then $\bs(M_{\mathrm c})=\{\varnothing\}$ and $\Gamma=0$). If $M/v$ is connected, then $M^*$ and $M^*\setminus v=(M/v)^*$ are connected, so $M^*$ has a square basis by the first case, and so does $M$ by Lemma~\ref{lem:dual}.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
@@ -276,12 +276,12 @@ By Proposition~\ref{prop:edge}(b) we may delete loops. The resulting matroid is 
 \end{proof}
 
 %====================================================================
-\section{Circuits through an element: proof of Theorem~\ref{thm:phi}}\label{sec:phiproof}
+\section{Circuits through a fixed element: proof of Theorem~\ref{thm:phi}}\label{sec:phiproof}
 Throughout, $P$ is a connected matroid with at least two elements, $v\in E(P)$, $X=E(P)-v$, and $r$ and $\cl$ denote the rank function and the closure operator of $P$. Since $P$ is connected, $v$ is neither a loop nor a coloop, and $r(X)=r(P)$.
 
 \medskip\noindent\textbf{Setup (S).} $X=A\sqcup B$ with $A,B\ne\varnothing$, and every circuit $C$ of $P$ through $v$ satisfies $C-v\subseteq A$ or $C-v\subseteq B$. Put $\lambda=r(A)+r(B)-r(X)$.
 
-If the graph of Theorem~\ref{thm:phi} is disconnected, then taking $A$ to be one of its components gives Setup (S). We shall show that (S) forces $\lambda=1$, and then that $\lambda=1$ disconnects $P/v$.
+If the graph of Theorem~\ref{thm:phi} is disconnected, then taking $A$ to be one of its components and $B$ the rest gives Setup (S). We shall show that (S) forces $\lambda=1$, and then that $\lambda=1$ disconnects $P/v$; hence the graph is connected whenever $P/v$ is, which proves Theorem~\ref{thm:phi}.
 
 \begin{lemma}\label{lem:phi1}
 In Setup (S), $v\in\cl(A)\cap\cl(B)$.
@@ -294,7 +294,7 @@ Every $x\in X$ lies in a circuit $C$ with $v\in C$, since $P$ is connected, and 
 In Setup (S), every $g\in A\cap\cl(B)$ is parallel to $v$, and symmetrically for $B$.
 \end{lemma}
 \begin{proof}
-Let $I$ be a basis of $B$. By Lemma~\ref{lem:phi1}, $v\in\cl(I)\setminus I$, and $g\in\cl(I)\setminus I$. Let $C_I(v)=D_v+v$ and $C_I(g)=D_g+g$ be the fundamental circuits, so $\varnothing\ne D_v,D_g\subseteq I$. Take a circuit $C$ containing $v$ and $g$; then $C-v\subseteq A$. Strong circuit elimination of $g$ from $C$ and $C_I(g)$, keeping $v$, gives a circuit $C'$ with $v\in C'\subseteq(C\cup C_I(g))-g$. If $C'-v\subseteq A$, then $C'\subsetneq C$, which is impossible. So $C'-v\subseteq B$, hence $C'-v\subseteq D_g$, and as $C'\subseteq I+v$ we get $C'=C_I(v)$ and $D_v\subseteq D_g$. Choose $x\in D_v$. Then $I'=I-x+g$ is independent with $\cl(I')=\cl(I)\ni v$, so $I'+v$ contains a unique circuit $C''$, and $v\in C''$. If $g\notin C''$, then $C''\subseteq I+v$ forces $C''=C_I(v)\ni x$, which is impossible. Thus $g\in C''$, so $C''-v\subseteq A$ while $C''-\{v,g\}\subseteq I\subseteq B$. Hence $C''=\{v,g\}$.
+Let $I$ be a basis of $B$. By Lemma~\ref{lem:phi1}, $v\in\cl(I)\setminus I$, and $g\in\cl(I)\setminus I$. Let $C_I(v)=D_v+v$ and $C_I(g)=D_g+g$ be the fundamental circuits, so $\varnothing\ne D_v,D_g\subseteq I$. Take a circuit $C$ containing $v$ and $g$; then $C-v\subseteq A$. Since $v\notin C_I(g)\subseteq I+g$, strong circuit elimination of $g$ from $C$ and $C_I(g)$, keeping $v$, gives a circuit $C'$ with $v\in C'\subseteq(C\cup C_I(g))-g$. If $C'-v\subseteq A$, then $C'\subseteq C-g$ since $C_I(g)-g=D_g\subseteq B$, which is impossible because $C$ is a circuit. So $C'-v\subseteq B$, hence $C'-v\subseteq D_g$ because $C$ does not meet $B$, and as $C'\subseteq I+v$ we get $C'=C_I(v)$ and $D_v\subseteq D_g$. Choose $x\in D_v$. Since $x\in D_g$ lies in the fundamental circuit of $g$, the set $I'=I-x+g$ is independent with $\cl(I')=\cl(I)\ni v$, so $I'+v$ contains a unique circuit $C''$, and $v\in C''$. If $g\notin C''$, then $C''\subseteq I+v$ forces $C''=C_I(v)\ni x$, which is impossible. Thus $g\in C''$, so $C''-v\subseteq A$ while $C''-\{v,g\}\subseteq I\subseteq B$. Hence $C''=\{v,g\}$.
 \end{proof}
 
 \begin{proposition}\label{prop:Q}
@@ -303,19 +303,19 @@ In Setup (S), $\lambda=1$.
 \begin{proof}
 By Lemma~\ref{lem:phi1} and submodularity, $r(A)+r(B)=r(A+v)+r(B+v)\ge r(P)+r(\{v\})=r(X)+1$, so $\lambda\ge1$. Suppose that some $(P,v,A,B)$ satisfying (S) has $\lambda\ge2$, and choose one with $|E(P)|$ minimal.
 
-If $A=\{a\}$, then $r(A)=1$ and $\lambda\le1+r(B)-r(X)\le1$; so $|A|\ge2$, and likewise $|B|\ge2$. We use three observations. (1) Condition (S) is inherited by $P\setminus e$ and $P/e$ for $e\in A$ (with $A-e$ in place of $A$), because every circuit through $v$ of a minor is contained in a circuit through $v$ of $P$. (2) For $e\in A$ we have $r_{P/e}(A-e)=r(A)-1$, $r_{P/e}(B)=r(B+e)-1$ and $r_{P/e}(X-e)=r(X)-1$, so $\lambda(P/e)=\lambda-[e\in\cl(B)]$, where $[\,\cdot\,]$ equals $1$ if the statement holds and $0$ otherwise. (3) For $e\in A$ that is not a coloop of $P|A$, $\lambda(P\setminus e)=\lambda$. Consequently, if $P/e$ or $P\setminus e$ is connected and $\lambda$ is preserved, we obtain a smaller counterexample.
+If $A=\{a\}$, then $r(A)=1$ and $\lambda\le1+r(B)-r(X)\le1$; so $|A|\ge2$, and likewise $|B|\ge2$. We use three observations. (1) Condition (S) is inherited by $P\setminus e$ and $P/e$ for $e\in A$ (with $A-e$ in place of $A$), because every circuit through $v$ of a minor is contained in a circuit through $v$ of $P$. (2) For $e\in A$ we have $r_{P/e}(A-e)=r(A)-1$, $r_{P/e}(B)=r(B+e)-1$ and $r_{P/e}(X-e)=r(X)-1$, so $\lambda(P/e)=\lambda-[e\in\cl(B)]$, where $[\,\cdot\,]$ equals $1$ if the statement holds and $0$ otherwise. (3) For $e\in A$ that is not a coloop of $P|A$, we have $r(A-e)=r(A)$ and hence $r(X-e)=r(X)$, so $\lambda(P\setminus e)=\lambda$. Consequently, if $P/e$ or $P\setminus e$ is connected and $\lambda$ is preserved, we obtain a smaller counterexample.
 
 \emph{Step 1: $A$ and $B$ are independent.} Let $e\in A$. If $e$ is parallel to $v$, then $v$ is a loop of $P/e$, so $P/e$ is disconnected. Otherwise $e\notin\cl(B)$ by Lemma~\ref{lem:A}, so $\lambda(P/e)=\lambda$ by (2), and minimality forces $P/e$ to be disconnected. By Tutte's theorem, $P\setminus e$ is connected, so by (3) and minimality $e$ must be a coloop of $P|A$. Hence $A$ is independent, and so is $B$.
 
-\emph{Step 2: a contradiction.} Since $A$ is independent, at most one element of $A$ is parallel to $v$, and $|A|\ge2$; choose $e\in A$ not parallel to $v$. By Step 1, $P/e$ is disconnected; let $W$ be its component containing $v$, and let $R=E(P)\setminus(W+e)$, which is nonempty. For $y\in R$ take a circuit $C$ of $P$ through $v$ and $y$. If $e\in C$, then $C-e$ is a circuit of $P/e$ containing $v$ and $y$; if $e\notin\cl(C)$, then $C$ is a circuit of $P/e$; in both cases $y\in W$, a contradiction. Hence $e\in\cl(C)\setminus C$. If $C-v\subseteq B$, then $e\in\cl(B)$ by Lemma~\ref{lem:phi1}, and $e$ is parallel to $v$ by Lemma~\ref{lem:A}, which is excluded. Therefore $C-v\subseteq A$, so $R\subseteq A-e$. As $A$ is independent, $r_{P/e}(R)=|R|$, so $P/e=(P/e)|W\oplus(P/e)|R$ gives $r_{P/e}(W)=r(P/e)-|R|$. Since $e$ is not a loop, $r(W+e)=r_{P/e}(W)+1$ and $r(P/e)=r(P)-1$; as $W+e=E(P)\setminus R$, we get $r(E(P)\setminus R)=r(P)-|R|$. Since deleting one element lowers the rank by at most one, every element $x$ of $R$ is a coloop of $P$ (delete $x$ first; the remaining $|R|-1$ deletions lower the rank by at most $|R|-1$), contradicting the connectivity of $P$.
+\emph{Step 2: a contradiction.} Since $A$ is independent, at most one element of $A$ is parallel to $v$, and $|A|\ge2$; choose $e\in A$ not parallel to $v$. By Step 1, $P/e$ is disconnected; let $W$ be its component containing $v$, and let $R=E(P)\setminus(W+e)$, which is nonempty. For $y\in R$ take a circuit $C$ of $P$ through $v$ and $y$. If $e\in C$, then $C-e$ is a circuit of $P/e$ containing $v$ and $y$; if $e\notin\cl(C)$, then $C$ is a circuit of $P/e$ (both are standard facts on circuits of a contraction; see~\cite[Chapter~3]{Ox11}); in both cases $y\in W$, a contradiction. Hence $e\in\cl(C)\setminus C$. If $C-v\subseteq B$, then $e\in\cl(B)$ by Lemma~\ref{lem:phi1}, and $e$ is parallel to $v$ by Lemma~\ref{lem:A}, which is excluded. Therefore $C-v\subseteq A$, so $R\subseteq A-e$. As $A$ is independent, $r_{P/e}(R)=|R|$, so $P/e=(P/e)|W\oplus(P/e)|R$ gives $r_{P/e}(W)=r(P/e)-|R|$. Since $e$ is not a loop, $r(W+e)=r_{P/e}(W)+1$ and $r(P/e)=r(P)-1$; as $W+e=E(P)\setminus R$, we get $r(E(P)\setminus R)=r(P)-|R|$. Since deleting one element lowers the rank by at most one, every element $x$ of $R$ is a coloop of $P$ (delete $x$ first; the remaining $|R|-1$ deletions lower the rank by at most $|R|-1$), contradicting the connectivity of $P$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:phi}]
-Suppose the graph is disconnected and let $A,B$ be as in Setup (S). By Proposition~\ref{prop:Q}, $\lambda=1$. By Lemma~\ref{lem:phi1}, $r_{P/v}(A)=r(A)-1$ and $r_{P/v}(B)=r(B)-1$, while $r(P/v)=r(X)-1$. Hence $r_{P/v}(A)+r_{P/v}(B)=r(A)+r(B)-2=r(P/v)$, so $P/v=(P/v)|A\oplus(P/v)|B$ is disconnected.
+Suppose the graph is disconnected, and take $A$ to be one of its components and $B$ the rest, so that Setup (S) holds. By Proposition~\ref{prop:Q}, $\lambda=1$. By Lemma~\ref{lem:phi1}, $r_{P/v}(A)=r(A)-1$ and $r_{P/v}(B)=r(B)-1$, while $r(P/v)=r(X)-1$. Hence $r_{P/v}(A)+r_{P/v}(B)=r(A)+r(B)-2=r(P/v)$, so $P/v=(P/v)|A\oplus(P/v)|B$ is disconnected.
 \end{proof}
 
 \begin{remark}[Relation to Lehman's theorem]\label{rem:lehman}
-Theorem~\ref{thm:phi} can also be derived from Lehman's theorem~\cite{Le64} (see~\cite[Section~4.3]{Ox11}): in a connected matroid $P$, the circuits avoiding $v$ are exactly the minimal sets of the form $(C_1\cup C_2)-\bigcap\{C: v\in C\subseteq C_1\cup C_2\}$, where $C_1\ne C_2$ are circuits through $v$. Indeed, recall that the circuits of $P/v$ are the minimal nonempty sets of the form $C-v$ with $C$ a circuit of $P$. In Setup (S), a circuit $D$ of $P/v$ meeting both $A$ and $B$ is not of the form $C-v$ with $v\in C$, so $D$ is a circuit of $P$ avoiding $v$. Moreover $v\notin\cl(D)$: otherwise $D+v$ contains a circuit $C\ni v$, and $C-v\subsetneq D$ because $D$ itself is a circuit, contradicting the minimality of $D$. Write $D$ as above. If $C_1-v$ and $C_2-v$ lie on the same side, then so does $D$. Otherwise every circuit through $v$ contained in $C_1\cup C_2$ equals $C_1$ or $C_2$, so the intersection is $\{v\}$ and $D\supseteq C_1-v$, whence $v\in\cl(D)$, a contradiction. Hence no circuit of $P/v$ meets both sides, and $P/v$ is disconnected. We have kept the self-contained proof above, which uses only circuit elimination, submodularity and Tutte's theorem, and gives in addition the rank identity $\lambda=1$ of Proposition~\ref{prop:Q}.
+Theorem~\ref{thm:phi} can also be derived from Lehman's theorem~\cite{Le64} (see~\cite[Section~4.3]{Ox11}): in a connected matroid $P$, the circuits avoiding $v$ are exactly the minimal sets of the form $(C_1\cup C_2)-\bigcap\{C: v\in C\subseteq C_1\cup C_2\}$, where $C_1\ne C_2$ are circuits through $v$. Indeed, recall that the circuits of $P/v$ are the minimal nonempty sets of the form $C-v$ with $C$ a circuit of $P$. In Setup (S), a circuit $D$ of $P/v$ meeting both $A$ and $B$ is not of the form $C-v$ with $v\in C$, so $D$ is a circuit of $P$ avoiding $v$. Moreover $v\notin\cl(D)$: otherwise $D+v$ contains a circuit $C\ni v$, and $C-v\subsetneq D$ because $D$ itself is a circuit, contradicting the minimality of $D$. By Lehman's theorem, write $D$ in the form above. If $C_1-v$ and $C_2-v$ lie on the same side, then so does $D$, contradicting the choice of $D$. Otherwise every circuit through $v$ contained in $C_1\cup C_2$ equals $C_1$ or $C_2$, so the intersection is $\{v\}$ and $D\supseteq C_1-v$, whence $v\in\cl(D)$, a contradiction. Hence no circuit of $P/v$ meets both sides, and $P/v$ is disconnected. We have kept the self-contained proof above, which uses only circuit elimination, submodularity and Tutte's theorem, and gives in addition the rank identity $\lambda=1$ of Proposition~\ref{prop:Q}.
 \end{remark}
 
 %====================================================================
@@ -364,17 +364,17 @@ In particular, by Theorem~\ref{thm:main} such a set $\mathcal R$ exists, so $I_M
 \begin{proof}
 In $\mathcal Y$ we have $f_z=y^{z^-}(y^z-1)$, so $(f_z:z\in\mathcal R)\mathcal Y=(y^z-1:z\in\mathcal R)\mathcal Y$. Since $y^{v+w}-1=y^v(y^w-1)+(y^v-1)$ and $y^{-v}-1=-y^{-v}(y^v-1)$, this ideal equals $\mathfrak a_L=(y^u-1:u\in L)\mathcal Y$ for the lattice $L=\langle\mathcal R\rangle$, and likewise $I_M\mathcal Y=\mathfrak a_{\kerZ}$. The map $y^w\mapsto[w]$ induces an isomorphism $\mathcal Y/\mathfrak a_L\cong K[\Z^{\bs}/L]$ onto the group algebra, under which $y^u-1$ maps to $[u]-[0]$; as distinct group elements are linearly independent, $y^u-1\in\mathfrak a_L$ if and only if $u\in L$. Hence (b) holds if and only if $L=\kerZ$, and since $|\mathcal R|=c=\rank\kerZ$, this is equivalent to (a).
 
-For any ideal $J\subseteq K[y]$ we have $J\mathcal Y\cap K[y]=J:p^{\infty}$ (this is standard; see~\cite{ES96}). The toric ideal is prime and contains no monomial, so $I_M:p^\infty=I_M$. Hence (b) implies (c). Conversely, if (c) holds, then $(f_z)\mathcal Y=((f_z):p^\infty)\mathcal Y=I_M\mathcal Y$, which is (b).
+For any ideal $J\subseteq K[y]$ we have $J\mathcal Y\cap K[y]=J:p^{\infty}$ (this is standard; see~\cite{ES96}). The toric ideal is prime and contains no monomial, so $I_M:p^\infty=I_M$. Hence, if (b) holds, then $(f_z:z\in\mathcal R):p^\infty=I_M\mathcal Y\cap K[y]=I_M$, which is (c). Conversely, if (c) holds, then $(f_z)\mathcal Y=((f_z):p^\infty)\mathcal Y=I_M\mathcal Y$, which is (b).
 
-Finally, let $J\subseteq K[y]$ be any ideal with $J:p^\infty=I_M$. Then $J\mathcal Y=I_M\mathcal Y$ as above. This is a prime of height $c$, since localization preserves the height of a prime not meeting the multiplicative set. By Krull's height theorem a prime minimal over an ideal with fewer than $c$ generators has height less than $c$, so $J\mathcal Y$, and hence $J$, needs at least $c$ generators.
+Finally, let $J\subseteq K[y]$ be any ideal with $J:p^\infty=I_M$. Then $J\mathcal Y=I_M\mathcal Y$ as above. Since localization preserves the height of a prime not meeting the multiplicative set, $J\mathcal Y$ is a prime of height $c$, so it is the unique minimal prime over itself. By Krull's height theorem, every prime minimal over an ideal with fewer than $c$ generators has height less than $c$; hence $J\mathcal Y$ cannot be generated by fewer than $c$ elements. Since the images of generators of $J$ generate $J\mathcal Y$, the ideal $J$ also needs at least $c$ generators.
 \end{proof}
 
 \begin{remark}
-The \LM{} theorem gives $I_M=J_M:\mathfrak m^\infty\subseteq J_M:p^\infty\subseteq I_M$, where $J_M$ is generated by all symmetric exchange binomials and $\mathfrak m=(y_I:I\in\bs)$; thus $J_M:p^\infty=I_M$. Corollary~\ref{cor:toric} shows that $c$ of them suffice, the least possible number.
+Let $J_M$ be the ideal generated by all symmetric exchange binomials, and let $\mathfrak m=(y_I:I\in\bs)$. The \LM{} theorem (Theorem~\ref{thm:sat}) states that $J_M:\mathfrak m^\infty=I_M$. Since $p\in\mathfrak m$, we have $J_M:\mathfrak m^\infty\subseteq J_M:p^\infty$, and since $J_M\subseteq I_M$ and $I_M$ is a prime not containing $p$, we have $J_M:p^\infty\subseteq I_M$. Hence $J_M:p^\infty=I_M$. Corollary~\ref{cor:toric} shows that $c$ symmetric exchange binomials, namely those of a square basis, already suffice for this, and that no ideal with fewer than $c$ generators has this property.
 \end{remark}
 
 \begin{remark}[Lattice bases and Markov bases]\label{rem:markov}
-In algebraic statistics, a finite subset of $\kerZ$ is a \emph{Markov basis} if the corresponding binomials generate $I_M$, and a \emph{lattice basis} if it is a $\Z$-basis of $\kerZ$~\cite{DS98}. A Markov basis always generates $\kerZ$ as a group, but a lattice basis is in general not a Markov basis~\cite{DS98}. The ideal generated by the binomials of a lattice basis is a \emph{lattice basis ideal}; its $p$-saturation is the lattice ideal~\cite{ES96}, and its primary decomposition has been studied by Ho\c{s}ten and Shapiro~\cite{HS00}. In these terms, White's conjecture asserts that the squares form a Markov basis, which fails in general~\cite{Lar26}; Theorem~\ref{thm:main} asserts that, for rank at least $1$, the squares always contain a lattice basis, and Corollary~\ref{cor:toric} is the corresponding statement about lattice basis ideals.
+In algebraic statistics, a finite subset of $\kerZ$ is a \emph{Markov basis} if the corresponding binomials generate $I_M$, and a \emph{lattice basis} if it is a $\Z$-basis of $\kerZ$~\cite{DS98}. A Markov basis always generates $\kerZ$ as a group, but a lattice basis is in general not a Markov basis~\cite{DS98}, and a generating set of $\kerZ$ need not contain a lattice basis. The ideal generated by the binomials of a lattice basis is called a \emph{lattice basis ideal}. Its $p$-saturation is the lattice ideal, which here is $I_M$~\cite{ES96}; the primary decomposition of lattice basis ideals has been studied by Ho\c{s}ten and Shapiro~\cite{HS00}. By Lemma~\ref{lem:sym}, White's conjecture asserts exactly that the squares form a Markov basis, and this fails in general~\cite{Lar26}. In contrast, Theorem~\ref{thm:main} shows that, for rank at least $1$, the squares always contain a lattice basis, and Corollary~\ref{cor:toric} shows that the corresponding lattice basis ideal recovers $I_M$ after $p$-saturation.
 \end{remark}
 
 \subsection{Invertible column scaling}\label{sec:criterion}
@@ -402,7 +402,7 @@ z^T\eta=\log|\det G|\, z^T\ind_{\bs}+\sum_i\log|\mu_i|\,(\AM z)_i=0.
 \end{gather*}
 If $D$ is positive, then $\epsilon_I=\sgn\det G$ is constant.
 
-\emph{The absolute values.} If $z^T\eta=0$ for all $z\in\mathcal R$, then, since $\mathcal R$ spans $\kerR$, we get $\eta=\AM^{T}x$ for some $x\in\R^n$, that is, $|p_I(Q')|=|p_I(Q)|\prod_{i\in I}e^{x_i}$ for all $I\in\bs$.
+\emph{The absolute values.} If $z^T\eta=0$ for all $z\in\mathcal R$, then $\eta$ is orthogonal to $\kerR$, since $\mathcal R$ spans it; hence $\eta=\AM^{T}x$ for some $x\in\R^n$, that is, $|p_I(Q')|=|p_I(Q)|\prod_{i\in I}e^{x_i}$ for all $I\in\bs$.
 
 \emph{Sufficiency in (b).} Put $D=\operatorname{diag}(e^{x_i})$. Then $p(Q')=\epsilon\,p(QD)$ as Pl\"ucker vectors, where $\epsilon$ is the common sign. By injectivity of the Pl\"ucker embedding, $Q'$ and $QD$ have the same row space, so $Q'=GQD$ for some $G\in GL(k,\R)$, and $\det G=\epsilon$.
 
@@ -422,14 +422,14 @@ Part (b) uses only that $\mathcal R$ spans $\kerR$, but part (a) uses that $\mat
 %====================================================================
 \section{Further remarks and open problems}\label{sec:caveats}
 \begin{theorem}[\LM{}~\cite{LM14}]\label{thm:sat}
-For every matroid $M$ and every field $K$, $I_M=J_M:\mathfrak m^\infty$, where $J_M$ is generated by the symmetric exchange binomials and $\mathfrak m=(y_I:I\in\bs)$.
+For every matroid $M$ of rank at least $1$ and every field $K$, $I_M=J_M:\mathfrak m^\infty$, where $J_M$ is generated by the symmetric exchange binomials and $\mathfrak m=(y_I:I\in\bs)$.
 \end{theorem}
 
 \begin{proposition}\label{prop:lattice}
 If $\rank M\ge1$, then $\sq(M)=\kerZ$. This follows from Theorem~\ref{thm:main}, and also directly from Theorem~\ref{thm:sat}.
 \end{proposition}
 \begin{proof}[Proof from Theorem~\ref{thm:sat}]
-Let $L=\sq(M)$ and $u\in\kerZ$. By Theorem~\ref{thm:sat} and Lemma~\ref{lem:sym}, $y_{I_0}^{m}(y^{u^+}-y^{u^-})\in J_M\subseteq(f_z:z\in L)$ for some basis $I_0$ and some $m$. Passing to $\mathcal Y$ and to $K[\Z^{\bs}/L]$ as in the proof of Corollary~\ref{cor:toric}, we get $[me_{I_0}]([u^+]-[u^-])=0$, hence $[u^+]=[u^-]$ and $u\in L$.
+Let $L=\sq(M)$ and $u\in\kerZ$. By Theorem~\ref{thm:sat} and Lemma~\ref{lem:sym}, $y_{I_0}^{m}(y^{u^+}-y^{u^-})\in J_M\subseteq(f_z:z\in L)$ for some basis $I_0$ and some $m$. Passing to $\mathcal Y$ and to $K[\Z^{\bs}/L]$ as in the proof of Corollary~\ref{cor:toric}, we get $[me_{I_0}]([u^+]-[u^-])=0$; since $[me_{I_0}]$ is a group element and hence a unit, $[u^+]=[u^-]$, that is, $u\in L$.
 \end{proof}
 
 \begin{remark}[White's conjecture]\label{rem:white}
@@ -463,6 +463,7 @@ Theorem~\ref{thm:main} and Corollary~\ref{cor:toric} concern the lattice $\kerZ$
 \bibitem{DS98} P. Diaconis and B. Sturmfels, \emph{Algebraic algorithms for sampling from conditional distributions}, Ann. Statist. 26 (1998), 363--397.
 \bibitem{W77} N. White, \emph{The basis monomial ring of a matroid}, Adv. Math. 24 (1977), 292--297.
 \bibitem{St96} B. Sturmfels, \emph{Gr\"obner Bases and Convex Polytopes}, University Lecture Series 8, Amer. Math. Soc., 1996.
+\bibitem{GR15} I. Garc\'{\i}a-Marco and J. L. Ram\'{\i}rez Alfons\'{\i}n, \emph{Matroid toric ideals: complete intersection, minors and minimal systems of generators}, SIAM J. Discrete Math. 29 (2015), no. 4, 2267--2276.
 \bibitem{Ox11} J. Oxley, \emph{Matroid Theory}, 2nd ed., Oxford University Press, 2011.
 \bibitem{Br69} R. A. Brualdi, \emph{Comments on bases in dependence structures}, Bull. Austral. Math. Soc. 1 (1969), 161--167.
 \bibitem{Le64} A. Lehman, \emph{A solution of the Shannon switching game}, J. Soc. Indust. Appl. Math. 12 (1964), 687--725.
