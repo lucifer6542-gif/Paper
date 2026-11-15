@@ -118,7 +118,7 @@ over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, neith
 \end{enumerate}
 
 
-\medskip\noindent\textbf{Outline of the proof.} The proof does not use the \LM{} theorem; its structure is summarized in Figure~\ref{fig:map}. First, direct sums reduce the problem to connected matroids (\S\ref{sec:dsum}). Next, let $M$ be a connected matroid and $v$ an element with $M\setminus v$ connected. An exact sequence $0\to\ker_\Z A_{M\setminus v}\to\kerZ\to\Gamma\to0$ allows us to lift a square basis of $M\setminus v$ to $M$, provided that a certain graph on $[n]-v$ is connected (\S\ref{sec:conn}). This graph is connected exactly when the cocircuits of $M$ through $v$, that is, the circuits of $M^*$ through $v$, link all other elements (Proposition~\ref{prop:phi}). In \S\ref{sec:phiproof} we prove that in a connected matroid $P$ the circuits through $v$ link all other elements whenever $P/v$ is connected (Theorem~\ref{thm:phi}); for $P=M^*$, since $P/v=(M\setminus v)^*$, this hypothesis says exactly that $M\setminus v$ is connected. Finally, by Tutte's theorem~\cite[Section~4.3]{Ox11}, $M\setminus v$ or $M/v$ is connected; if $M/v$ is connected, then $M^*\setminus v=(M/v)^*$ is connected, and duality (Lemma~\ref{lem:dual}) reduces this case to the previous one applied to $M^*$. This completes the induction. For uniform matroids an explicit basis is given in \S\ref{sec:uniform}.
+\medskip\noindent\textbf{Outline of the proof.} The proof does not use the \LM{} theorem; its structure is summarized in Figure~\ref{fig:map}. First, direct sums reduce the problem to connected matroids (\S\ref{sec:dsum}). Next, let $M$ be a connected matroid and $v$ an element with $M\setminus v$ connected. An exact sequence $0\to\ker_\Z A_{M\setminus v}\to\kerZ\to\Gamma\to0$ allows us to lift a square basis of $M\setminus v$ to $M$, provided that a certain graph on $[n]-v$ is connected (\S\ref{sec:conn}). This graph is connected exactly when the cocircuits of $M$ through $v$, that is, the circuits of $M^*$ through $v$, link all other elements (Proposition~\ref{prop:phi}). In \S\ref{sec:phiproof} we prove that in a connected matroid $P$ the circuits through $v$ link all other elements whenever $P/v$ is connected (Theorem~\ref{thm:phi}); for $P=M^*$, since $P/v=(M\setminus v)^*$, this hypothesis says exactly that $M\setminus v$ is connected. Finally, by Tutte's theorem~\cite[Section~4.3]{Ox11}, $M\setminus v$ or $M/v$ is connected; if $M/v$ is connected, then $M^*\setminus v=(M/v)^*$ is connected, and duality (Lemma~\ref{lem:dual}) reduces this case to the previous one applied to $M^*$. This completes the induction. For uniform matroids an explicit basis is given in \S\ref{sec:uniform}. The proof is constructive, and it gives an algorithm that runs in time polynomial in $n$ and $N$ (Remark~\ref{rem:alg}).
 
 \begin{figure}[H]
 \centering
@@ -144,7 +144,7 @@ over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, neith
 \label{fig:map}
 \end{figure}
 
-\medskip\noindent\textbf{Organization.} Section~\ref{sec:prelim} fixes notation. Sections~\ref{sec:dsum}--\ref{sec:phiproof} prove Theorem~\ref{thm:main}. Section~\ref{sec:uniform} treats uniform matroids. Section~\ref{sec:apps} gives the consequences for toric ideals and the application to invertible column scaling, and Section~\ref{sec:caveats} discusses the relation to the \LM{} theorem and open problems.
+\medskip\noindent\textbf{Organization.} Section~\ref{sec:prelim} fixes notation. Sections~\ref{sec:dsum}--\ref{sec:phiproof} prove Theorem~\ref{thm:main}. Section~\ref{sec:uniform} treats uniform matroids. Section~\ref{sec:apps} gives the consequences for toric ideals and the application to invertible column scaling, and Section~\ref{sec:caveats} discusses the relation to the \LM{} theorem, the computation of a square basis, and open problems.
 
 %====================================================================
 \section{Preliminaries}\label{sec:prelim}
@@ -436,11 +436,14 @@ Let $L=\sq(M)$ and $u\in\kerZ$. By Theorem~\ref{thm:sat} and Lemma~\ref{lem:sym}
 Theorem~\ref{thm:main} and Corollary~\ref{cor:toric} concern the lattice $\kerZ$, equivalently the ideal $I_M$ after inverting all variables. White's conjecture asks whether $J_M=I_M$ in $K[y]$ itself; this is a statement about the ideal rather than the lattice, and it is false in general~\cite{Lar26}.
 \end{remark}
 
+\begin{remark}[Computing a square basis]\label{rem:alg}
+The proof of Theorem~\ref{thm:main} is constructive. Suppose that $M$ is given by an independence oracle. The greedy algorithm finds one basis, and since the basis exchange graph is connected, a search of this graph lists all of $\bs$ with $O(n^2N)$ oracle calls. From this list, the loops, the connected components, and the connectivity of $M\setminus v$ can be determined in time polynomial in $n$ and $N$, and passing to $M^*$ amounts to taking complements. In the induction of Theorem~\ref{thm:cond}, each step removes one element and makes a single recursive call. The graph $H$ has at most $N$ vertices, so $H$ and a spanning tree of it are obtained with $O(nN^2)$ membership tests in $\bs$. The constructions in Proposition~\ref{prop:dsum} and Lemma~\ref{lem:dual} are explicit and also run in polynomial time. Hence a square basis can be computed in time polynomial in $n$ and $N$. Since a square basis has $N-\rank\AM\ge N-n$ elements, no algorithm can avoid a dependence on $N$.
+\end{remark}
+
 \medskip\noindent\textbf{Open problems.}
 \begin{enumerate}[label=(\arabic*),itemsep=2pt]
 \item Is there a canonical square basis, for instance one determined by the basis exchange graph or by a total order on $[n]$, generalizing Proposition~\ref{prop:uniform}?
 \item For which matroids does some square basis $\mathcal R$ satisfy $(f_z:z\in\mathcal R):\mathfrak m^\infty=I_M$? Since $\mathfrak m$-saturation is finer than $p$-saturation, this would strengthen Corollary~\ref{cor:toric} toward Theorem~\ref{thm:sat}.
-\item Is there an algorithm that, given an independence oracle, outputs a square basis in time polynomial in $n$ and $N$?
 \end{enumerate}
 
 %====================================================================
