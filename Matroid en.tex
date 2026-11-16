@@ -68,7 +68,7 @@ Let $M$ be a matroid of rank $k$ on $[n]=\{1,\dots,n\}$ with set of bases $\bs$,
 \[
 \kerZ=\{u\in\Z^{\bs}:\AM u=0\}
 \]
-is a free abelian group of rank $N-\rank\AM$. It is the lattice of the toric ideal $I_M$ of $M$, the kernel of the map $y_I\mapsto\prod_{i\in I}x_i$~\cite{W77,St96}.
+is a free abelian group of rank $N-\rank\AM$, where $\rank\AM$ is the rank over $\mathbb Q$. It is the lattice of the toric ideal $I_M$ of $M$, the kernel of the map $y_I\mapsto\prod_{i\in I}x_i$~\cite{W77,St96}.
 
 Basis exchange produces natural elements of this lattice. Let $i\ne j$, and let $B\ne B'$ be $(k-1)$-sets with $i,j\notin B\cup B'$. If $B+i$, $B+j$, $B'+i$, $B'+j$ are all bases, then $\ind_{B+i}-\ind_{B+j}=e_i-e_j=\ind_{B'+i}-\ind_{B'+j}$ in $\Z^n$. Hence, writing $e_I$ for the standard basis vector of $\Z^{\bs}$ indexed by $I\in\bs$, we have
 \[
@@ -118,8 +118,6 @@ over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, neith
 \end{enumerate}
 
 
-\medskip\noindent\textbf{Outline of the proof.} The proof does not use the \LM{} theorem; its structure is summarized in Figure~\ref{fig:map}. First, direct sums reduce the problem to connected matroids (\S\ref{sec:dsum}). Next, let $M$ be a connected matroid and $v$ an element with $M\setminus v$ connected. An exact sequence $0\to\ker_\Z A_{M\setminus v}\to\kerZ\to\Gamma\to0$ allows us to lift a square basis of $M\setminus v$ to $M$, provided that a certain graph on $[n]-v$ is connected (\S\ref{sec:conn}). This graph is connected exactly when the cocircuits of $M$ through $v$, that is, the circuits of $M^*$ through $v$, link all other elements (Proposition~\ref{prop:phi}). In \S\ref{sec:phiproof} we prove that in a connected matroid $P$ the circuits through $v$ link all other elements whenever $P/v$ is connected (Theorem~\ref{thm:phi}); for $P=M^*$, since $P/v=(M\setminus v)^*$, this hypothesis says exactly that $M\setminus v$ is connected. Finally, by Tutte's theorem~\cite[Section~4.3]{Ox11}, $M\setminus v$ or $M/v$ is connected; if $M/v$ is connected, then $M^*\setminus v=(M/v)^*$ is connected, and duality (Lemma~\ref{lem:dual}) reduces this case to the previous one applied to $M^*$. This completes the induction. For uniform matroids an explicit basis is given in \S\ref{sec:uniform}. The proof is constructive, and it gives an algorithm that runs in time polynomial in $n$ and $N$ (Remark~\ref{rem:alg}).
-
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
@@ -144,6 +142,8 @@ over any field $K$ (Corollary~\ref{cor:toric}). By Krull's height theorem, neith
 \label{fig:map}
 \end{figure}
 
+\medskip\noindent\textbf{Outline of the proof.} The proof does not use the \LM{} theorem; its structure is summarized in Figure~\ref{fig:map}. First, direct sums reduce the problem to connected matroids (\S\ref{sec:dsum}). Next, let $M$ be a connected matroid and $v$ an element with $M\setminus v$ connected. An exact sequence $0\to\ker_\Z A_{M\setminus v}\to\kerZ\to\Gamma\to0$ allows us to lift a square basis of $M\setminus v$ to $M$, provided that a certain graph on $[n]-v$ is connected (\S\ref{sec:conn}). This graph is connected exactly when the cocircuits of $M$ through $v$, that is, the circuits of $M^*$ through $v$, link all other elements (Proposition~\ref{prop:phi}). In \S\ref{sec:phiproof} we prove that in a connected matroid $P$ the circuits through $v$ link all other elements whenever $P/v$ is connected (Theorem~\ref{thm:phi}); for $P=M^*$, since $P/v=(M\setminus v)^*$, this hypothesis says exactly that $M\setminus v$ is connected. Finally, by Tutte's theorem~\cite[Section~4.3]{Ox11}, $M\setminus v$ or $M/v$ is connected; if $M/v$ is connected, then $M^*\setminus v=(M/v)^*$ is connected, and duality (Lemma~\ref{lem:dual}) reduces this case to the previous one applied to $M^*$. This completes the induction. For uniform matroids an explicit basis is given in \S\ref{sec:uniform}. The proof is constructive, and it gives an algorithm that runs in time polynomial in $n$ and $N$ (Remark~\ref{rem:alg}).
+
 \medskip\noindent\textbf{Organization.} Section~\ref{sec:prelim} fixes notation. Sections~\ref{sec:dsum}--\ref{sec:phiproof} prove Theorem~\ref{thm:main}. Section~\ref{sec:uniform} treats uniform matroids. Section~\ref{sec:apps} gives the consequences for toric ideals and the application to invertible column scaling, and Section~\ref{sec:caveats} discusses the relation to the \LM{} theorem, the computation of a square basis, and open problems.
 
 %====================================================================
@@ -152,7 +152,7 @@ We use the matroid terminology of Oxley~\cite{Ox11}. For a set $I$ and an elemen
 \[
 I_M=\big(y^{u^+}-y^{u^-}:u\in\kerZ\big),
 \]
-where $u=u^+-u^-$ with $u^\pm\in\N^{\bs}$ of disjoint supports and $y^w=\prod_Iy_I^{w_I}$. The Krull dimension of $K[y]/I_M$ is $\rank\AM$, so $I_M$ has height $N-\rank\AM$.
+where $u=u^+-u^-$ with $u^\pm\in\N^{\bs}$ of disjoint supports and $y^w=\prod_Iy_I^{w_I}$. For every field $K$, the Krull dimension of $K[y]/I_M$ is $\rank\AM$~\cite{St96}, so $I_M$ has height $N-\rank\AM$.
 
 \begin{definition}\label{def:square}
 For distinct $i,j\in[n]$ and distinct $(k-1)$-subsets $B,B'$ with $i,j\notin B\cup B'$ such that $B+i,B+j,B'+i,B'+j$ are bases, the vector $z_{i,j;B,B'}=e_{B+i}-e_{B+j}-e_{B'+i}+e_{B'+j}\in\Z^{\bs}$ is a \emph{square relation}, or \emph{square}. We write $\sq(M)$ for the sublattice of $\Z^{\bs}$ generated by the squares, and we say that $M$ \emph{has a square basis} if $\kerZ$ has a $\Z$-basis consisting of squares.
@@ -307,7 +307,7 @@ If $A=\{a\}$, then $r(A)=1$ and $\lambda\le1+r(B)-r(X)\le1$; so $|A|\ge2$, and l
 
 \emph{Step 1: $A$ and $B$ are independent.} Let $e\in A$. If $e$ is parallel to $v$, then $v$ is a loop of $P/e$, so $P/e$ is disconnected. Otherwise $e\notin\cl(B)$ by Lemma~\ref{lem:A}, so $\lambda(P/e)=\lambda$ by (2), and minimality forces $P/e$ to be disconnected. By Tutte's theorem, $P\setminus e$ is connected, so by (3) and minimality $e$ must be a coloop of $P|A$. Hence $A$ is independent, and so is $B$.
 
-\emph{Step 2: a contradiction.} Since $A$ is independent, at most one element of $A$ is parallel to $v$, and $|A|\ge2$; choose $e\in A$ not parallel to $v$. By Step 1, $P/e$ is disconnected; let $W$ be its component containing $v$, and let $R=E(P)\setminus(W+e)$, which is nonempty. For $y\in R$ take a circuit $C$ of $P$ through $v$ and $y$. If $e\in C$, then $C-e$ is a circuit of $P/e$ containing $v$ and $y$; if $e\notin\cl(C)$, then $C$ is a circuit of $P/e$ (both are standard facts on circuits of a contraction; see~\cite[Chapter~3]{Ox11}); in both cases $y\in W$, a contradiction. Hence $e\in\cl(C)\setminus C$. If $C-v\subseteq B$, then $e\in\cl(B)$ by Lemma~\ref{lem:phi1}, and $e$ is parallel to $v$ by Lemma~\ref{lem:A}, which is excluded. Therefore $C-v\subseteq A$, so $R\subseteq A-e$. As $A$ is independent, $r_{P/e}(R)=|R|$, so $P/e=(P/e)|W\oplus(P/e)|R$ gives $r_{P/e}(W)=r(P/e)-|R|$. Since $e$ is not a loop, $r(W+e)=r_{P/e}(W)+1$ and $r(P/e)=r(P)-1$; as $W+e=E(P)\setminus R$, we get $r(E(P)\setminus R)=r(P)-|R|$. Since deleting one element lowers the rank by at most one, every element $x$ of $R$ is a coloop of $P$ (delete $x$ first; the remaining $|R|-1$ deletions lower the rank by at most $|R|-1$), contradicting the connectivity of $P$.
+\emph{Step 2: a contradiction.} Since $A$ is independent, at most one element of $A$ is parallel to $v$, and $|A|\ge2$; choose $e\in A$ not parallel to $v$. By Step 1, $P/e$ is disconnected; let $W$ be its component containing $v$, and let $R=E(P)\setminus(W+e)$, which is nonempty. For $y\in R$ take a circuit $C$ of $P$ through $v$ and $y$. If $e\in C$, then $C-e$ is a circuit of $P/e$ containing $v$ and $y$; if $e\notin\cl(C)$, then $C$ is a circuit of $P/e$ (both are standard facts on circuits of a contraction; see~\cite[Chapter~3]{Ox11}); in both cases $y\in W$, a contradiction. Hence $e\in\cl(C)\setminus C$. If $C-v\subseteq B$, then $e\in\cl(C)\subseteq\cl(B+v)=\cl(B)$ by Lemma~\ref{lem:phi1}, and $e$ is parallel to $v$ by Lemma~\ref{lem:A}, which is excluded. Therefore $C-v\subseteq A$, so $R\subseteq A-e$. As $A$ is independent, $r_{P/e}(R)=|R|$, so $P/e=(P/e)|W\oplus(P/e)|R$ gives $r_{P/e}(W)=r(P/e)-|R|$. Since $e$ is not a loop, $r(W+e)=r_{P/e}(W)+1$ and $r(P/e)=r(P)-1$; as $W+e=E(P)\setminus R$, we get $r(E(P)\setminus R)=r(P)-|R|$. Since deleting one element lowers the rank by at most one, every element $x$ of $R$ is a coloop of $P$ (delete $x$ first; the remaining $|R|-1$ deletions lower the rank by at most $|R|-1$), contradicting the connectivity of $P$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:phi}]
