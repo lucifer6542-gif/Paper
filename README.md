@@ -1,6 +1,6 @@
-# Papers — Youngsu Kim
+# Papers
 
-Independent Researcher, Seoul, Republic of Korea · ORCID [0009-0003-2248-4333](https://orcid.org/0009-0003-2248-4333)
+ORCID [0009-0003-2248-4333](https://orcid.org/0009-0003-2248-4333)
 
 Website: **https://lucifer6542-gif.github.io/Paper/**
 
